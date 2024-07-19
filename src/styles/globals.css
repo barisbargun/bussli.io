@@ -1,0 +1,35 @@
+@import "gradients.css";
+@import "spacing.css";
+@import "text.css";
+@import "components.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Space+Grotesk:wght@300..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply m-0 box-border p-0 font-montserrat subpixel-antialiased;
+  }
+
+  #root {
+    @apply flex min-h-screen w-full flex-col items-center overflow-hidden bg-white text-slate-900 text-base;
+  }
+
+  textarea {
+    @apply resize-none;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+}
+
+@layer components {
+  .navActive::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-0.5 w-full rounded-lg bg-indigo-600;
+  }
+}

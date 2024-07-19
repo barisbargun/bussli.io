@@ -1,0 +1,12 @@
+/*
+
+  BUTTONS
+
+*/
+
+@layer utilities {
+  .indigoButton {
+    @apply text-lg active:bg-indigo-800 rounded-lg border border-solid border-indigo-500 bg-indigo-600 text-center font-bold text-white transition-all duration-100 hover:bg-indigo-700 px-10 py-2;
+  }
+}
+

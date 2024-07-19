@@ -1,0 +1,18 @@
+@layer utilities {
+  .pageGradient {
+    background: var(
+      --bg-linear-1,
+      linear-gradient(135deg, #fff 8.63%, #eef2ff 90.45%)
+    );
+  }
+
+  .rectangleGradient {
+    background: linear-gradient(
+      185deg,
+      rgba(255, 255, 255, 0.05) 4.64%,
+      rgba(255, 255, 255, 0.1) 92.11%
+    );
+
+    background-blend-mode: plus-lighter;
+  }
+}
