@@ -1,0 +1,66 @@
+/*
+
+  PAGE SPACING
+
+*/
+@layer utilities {
+  .pageMaxWidth {
+    @apply w-full lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1536px];
+  }
+
+  .navSpacing {
+    @apply pt-5 xl:pt-[1.875rem]; /* PADDING TOP */
+
+    @apply pageMaxWidth px-[1.563rem] lg:px-[3rem] xl:px-[6rem] 2xl:px-[9.375rem]; /* PADDING X */
+  }
+
+  .pageXSpacing {
+    @apply pageMaxWidth px-[2.188rem] lg:px-[5rem] xl:px-[9rem] 2xl:px-[11.875rem];
+  }
+
+  .pageBottomSpacing {
+    @apply pb-[3.75rem] xl:pb-[5.625rem];
+  }
+
+  .pageSpacing {
+    @apply pageXSpacing pageBottomSpacing;
+    @apply pt-10 xl:pt-[3.75rem]; /* PADDING TOP */
+    @apply pb-[3.75rem] xl:pb-[5.625rem]; /* PADDING BOTTOM */
+  }
+
+  .firstPageSpacing {
+    @apply pageXSpacing pt-[calc(3.125rem+3.25rem)] xl:pt-[calc(4.375rem+5rem)]; /* PADDING TOP */
+  }
+
+  .mainFirstPageSpacing {
+    @apply pageXSpacing pt-[calc(3.125rem+3.25rem)] xl:pt-[calc(4.25rem+5rem)] 2xl:pt-[calc(6.25rem+5rem)]; /* PADDING TOP */
+  }
+}
+
+/*
+
+  ELEMENTS SPACING
+  
+*/
+@layer utilities {
+  .navTitleSpacing {
+    @apply mb-[0.625rem] xl:mb-[0.938rem];
+  }
+
+  .titleDescSpacing {
+    @apply mb-[0.3125rem] xl:mb-[0.625rem];
+  }
+
+  .firstContentSpacing {
+    @apply mt-[1.875rem] xl:mt-[3.125rem];
+  }
+
+  /* AFTER THE FIRST CONTENT SPACING */
+  .relatedContentSpacing {
+    @apply mt-[3.75rem] xl:mt-[6.25rem];
+  }
+
+  .unrelatedContentSpacing {
+    @apply mt-[4.688rem] xl:mt-[7.813rem];
+  }
+}

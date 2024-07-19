@@ -1,0 +1,13 @@
+/*
+
+  GRADIENTS
+
+*/
+@layer utilities {
+  .pageGradient {
+    background: var(
+      --bg-linear-1,
+      linear-gradient(135deg, #fff 8.63%, #eef2ff 90.45%)
+    );
+  }
+}

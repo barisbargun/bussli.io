@@ -1,0 +1,19 @@
+.logoTitle {
+  @apply text-2xl font-bold;
+}
+
+.pageNavTitle {
+  @apply navTitleSpacing text-xs font-semibold uppercase text-rose-500 xl:text-sm;
+}
+
+.mainTitle {
+  @apply text-4xl font-bold !leading-[110%] tracking-[-2px] lg:text-[2.8rem] xl:text-5xl 2xl:text-6xl;
+}
+
+.pageTitle {
+  @apply text-xl font-bold lg:text-2xl xl:text-3xl 2xl:text-4xl;
+}
+
+.pageDesc {
+  @apply text-xs leading-[150%] opacity-70 lg:text-base xl:text-lg 2xl:text-xl;
+}
