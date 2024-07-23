@@ -19,7 +19,7 @@ const Page = ({
     <div {...props} className={cn("flex w-full justify-center", className)}>
       <div
         className={cn(
-          "w-full",
+          "relative flex w-full flex-col",
           page == "MainFirstPage"
             ? "mainFirstPageSpacing"
             : page == "FirstPage"

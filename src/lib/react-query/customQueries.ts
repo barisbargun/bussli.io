@@ -1,3 +1,4 @@
+import { queryConfig } from "@/config";
 import _useQuery from "./_useQuery";
 
 const _useQueryById = <T>(path: QUERY_PATHS, id?: string) => {
@@ -13,10 +14,11 @@ const _useQueryById = <T>(path: QUERY_PATHS, id?: string) => {
 const _useQueryByPage = <T>(path: QUERY_PATHS, includeBasePath: boolean, page?: number) => {
   const query = [];
   includeBasePath && query.push(path);
-  page && query.push(`${path}?page=${page}`);
+  const param = queryConfig.presets.param.replace("{{1}}", (page || 0).toString());
+  page && query.push(`${path}${param}`);
   return _useQuery<T>({
     path: path,
-    param: `?page=${page}`,
+    param: param,
     query: query,
     options: { enabled: !!page }
   });

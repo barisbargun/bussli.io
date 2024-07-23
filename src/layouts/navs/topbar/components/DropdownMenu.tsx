@@ -21,7 +21,7 @@ const DropdownMenu = () => {
           aria-label="dropdown"
         />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="mr-2">
+      <DropdownMenuContent alignOffset={-100} align="start">
         <DropdownMenuLabel>Bussli.io</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {topbar.map((item) => (

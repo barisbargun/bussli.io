@@ -25,7 +25,6 @@
   .pageSpacing {
     @apply pageXSpacing pageBottomSpacing;
     @apply pt-10 xl:pt-[3.75rem]; /* PADDING TOP */
-    @apply pb-[3.75rem] xl:pb-[5.625rem]; /* PADDING BOTTOM */
   }
 
   .firstPageSpacing {
@@ -36,6 +35,7 @@
     @apply pageXSpacing pt-[calc(3.125rem+3.25rem)] xl:pt-[calc(4.25rem+5rem)] 2xl:pt-[calc(6.25rem+5rem)]; /* PADDING TOP */
   }
 }
+
 
 /*
 
@@ -52,7 +52,7 @@
   }
 
   .firstContentSpacing {
-    @apply mt-[1.875rem] xl:mt-[3.125rem];
+    @apply mt-10 xl:mt-[4.375rem];
   }
 
   /* AFTER THE FIRST CONTENT SPACING */

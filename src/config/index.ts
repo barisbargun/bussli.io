@@ -1,25 +1,3 @@
-const config = {
-  logo: {
-    name: "Bussli.io"
-  }
-}
-
-const pageLinks = {
-  home: {
-    url: "home",
-  },
-  pricing: {
-    url: "pricing",
-  },
-  about: {
-    url: "about",
-  },
-  terms: {
-    url: "terms",
-  },
-  contact: {
-    url: "contact",
-  }
-}
-
-export { config, pageLinks };
+export * from "./config";
+export { default as assets } from "./assets";
+export { default as queryConfig } from "./queryConfig";

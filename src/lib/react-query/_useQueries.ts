@@ -1,7 +1,7 @@
 import { useQueryClient, useQueries } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import axios from "@/lib/axios";
-import { defaultQueryOptions } from "@/config/query";
+import { queryConfig } from "@/config";
 
 const _useQueries = <T>({ path, queries,
   options }: _useQueriesProps<T>) => {
@@ -30,7 +30,7 @@ const _useQueries = <T>({ path, queries,
               throw error.response;
             throw error;
           }),
-        ...defaultQueryOptions,
+        ...queryConfig.defaultOptions,
         ...options,
         initialData: query.id ? query as T : undefined,
       }

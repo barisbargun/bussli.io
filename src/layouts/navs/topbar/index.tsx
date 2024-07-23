@@ -1,4 +1,4 @@
-import { config } from "@/config";
+import { baseConfig } from "@/config";
 import topbar from "@/config/nav/topbar";
 import { cn } from "@/lib/utils";
 import { Link, NavLink } from "react-router-dom";
@@ -12,7 +12,9 @@ const index = () => {
   return (
     <nav className="navSpacing flex items-center justify-between gap-5 lg:justify-center">
       <Link to={"/"}>
-        <h2 className="logoTitle hover:text-indigo-500">{config.logo.name}</h2>
+        <h2 className="logoTitle hover:text-indigo-500">
+          {baseConfig.logo.name}
+        </h2>
       </Link>
       {windowSize >= 3 ? (
         <>

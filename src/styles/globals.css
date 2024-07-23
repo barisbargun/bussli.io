@@ -2,19 +2,23 @@
 @import "colors.css";
 @import "text.css";
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Space+Grotesk:wght@300..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    font-size:16px;
+  }
+
   * {
-    @apply m-0 box-border p-0 font-montserrat;
+    @apply m-0 box-border p-0 font-montserrat subpixel-antialiased;
   }
 
   #root {
-    @apply flex min-h-screen w-full flex-col items-center bg-white text-slate-900;
+    @apply flex min-h-screen w-full flex-col items-center overflow-hidden bg-white text-slate-900;
   }
 
   .flex-center {

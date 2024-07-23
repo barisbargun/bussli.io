@@ -15,7 +15,6 @@ const p = {
   company: `icons/company/`,
 
   illustrations: `illustrations/`,
-  shapes: `shapes/`,
 }
 
 const images = {
@@ -53,12 +52,6 @@ const svg = {
     imageViewer: getSvg(`${p.illustrations}imageViewer`),
     proudCoder: getSvg(`${p.illustrations}proudCoder`),
 
-  },
-
-  shapes: {
-    octagon: getSvg(`${p.shapes}octagon`),
-    rectangle: getSvg(`${p.shapes}rectangle`),
-    square: getSvg(`${p.shapes}square`),
   },
 }
 
