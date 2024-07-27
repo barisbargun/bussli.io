@@ -6,11 +6,11 @@ type Props = (typeof footerText.links)[0];
 const MenuLink = ({ items, title }: Props) => {
   return (
     <div>
-      <h5 className="mb-4 opacity-70 font-light">{title}</h5>
-      <ul className="flex flex-col gap-3">
+      <h5 className="mb-8 sm:mb-4 opacity-70 font-light max-sm:text-[1.4rem]">{title}</h5>
+      <ul className="flex flex-col gap-8 sm:gap-3">
         {items.map((v) => (
           <li key={v.title}>
-            <Link className="font-lg tracking-tight hover:text-indigo-400 transition-colors duration-100" to={v.to}>
+            <Link className="text-[1.6rem] sm:text-lg tracking-tight hover:text-indigo-400 transition-colors duration-100" to={v.to}>
               {v.title}
             </Link>
           </li>

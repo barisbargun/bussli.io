@@ -10,7 +10,7 @@ const Company = ({ icon, title }: Props) => {
         alt="company-logo"
         className="size-[1.87rem] lg:size-9 xl:size-11"
       />
-      <p className="font-semibold max-sm:text-xs lg:text-sm xl:text-lg 2xl:text-xl">
+      <p className="font-semibold text-lg">
         {title}
       </p>
     </div>

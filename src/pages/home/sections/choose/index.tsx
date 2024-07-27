@@ -16,14 +16,14 @@ const index = () => {
         title={config.title}
         className="max-w-[36rem] text-center"
       />
-      <div className="firstContentSpacing grid max-w-[56rem] grid-cols-2 gap-20">
+      <div className="firstContentSpacing max-sm:px-mobilePadding grid max-w-[56rem] grid-cols-2 gap-24 lg:gap-20">
         {config.features.map((v) => (
           <Feature {...v} key={v.title} />
         ))}
       </div>
 
-      <config.shape className="absolute -left-[3rem] top-[10.6rem] h-[6.8rem]" />
-      <Cta className="unrelatedContentSpacing"/>
+      <config.shape className="absolute -left-[2.7rem] top-[8rem] h-[5rem] lg:-left-[3rem] lg:top-[10.6rem] lg:h-[6.8rem]" />
+      <Cta className="unrelatedContentSpacing" />
     </Page>
   );
 };

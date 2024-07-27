@@ -15,8 +15,8 @@ const Product = ({ nav, title, img, size = "base", ...props }: Props) => {
         src={img}
         alt="product-img"
         className={cn(
-          "w-full rounded-lg object-cover",
-          size == "long" ? "h-[33.75rem]" : "h-[21.3rem]",
+          "w-full rounded-lg object-cover", 
+          size == "long" ? "h-[13.5rem] sm:h-[20rem] lg:h-[33.75rem]" : "h-[8.5rem] sm:h-[12.6rem] lg:h-[21.3rem]",
         )}
       />
       <div className="mt-8 flex flex-col pl-8">

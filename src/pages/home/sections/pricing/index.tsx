@@ -12,13 +12,13 @@ const index = () => {
         title={config.title}
         desc={config.desc}
       />
-      <div className="z-10 firstContentSpacing flex justify-between gap-10">
+      <div className="z-10 firstContentSpacing flex max-lg:flex-wrap lg:justify-between gap-10 max-sm:px-12 max-lg:sm:justify-center">
         {config.packages.map((card, i) => (
-          <Card key={i} {...card} />
+          <Card className=" max-lg:sm:w-[calc(50%-1.25rem)]" key={i} {...card} />
         ))}
       </div>
 
-      <div className="relatedContentSpacing flex justify-between">
+      <div className="relatedContentSpacing flex justify-between gap-10 max-sm:flex-col">
         {pricingText.faq.faqs.slice(0, 2).map((v, i) => (
           <Faq key={i} {...v} />
         ))}

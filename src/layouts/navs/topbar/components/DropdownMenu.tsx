@@ -26,7 +26,7 @@ const DropdownMenu = () => {
         <DropdownMenuSeparator />
         {topbar.map((item) => (
           <DropdownMenuItem key={item.name}>
-            <Link to={item.url}>{item.name}</Link>
+            <Link className="w-full max-lg:py-1" to={item.url}>{item.name}</Link>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

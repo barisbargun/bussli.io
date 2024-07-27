@@ -7,7 +7,7 @@ const CTA = ({ className, ...props }: Props) => {
   return (
     <div
       {...props}
-      className={cn("flex w-full items-center justify-between", className)}
+      className={cn("flex w-full items-center justify-between gap-16", className)}
     >
       <div>
         <h2 className="text-3xl font-bold tracking-[-1.2px]">

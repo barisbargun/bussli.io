@@ -9,33 +9,34 @@
   }
 
   .navSpacing {
-    @apply pt-5 xl:pt-[1.875rem]; /* PADDING TOP */
-
-    @apply pageMaxWidth px-[1.563rem] lg:px-[3rem] xl:px-[6rem] 2xl:px-[9.375rem]; /* PADDING X */
+    @apply pageMaxWidth;
+    @apply pt-[1.875rem]; /* PADDING TOP */
+    @apply px-[25px] sm:px-[48px] xl:px-[96px] 2xl:px-[150px]; /* PADDING X */
   }
 
   .pageXSpacing {
-    @apply pageMaxWidth px-[2.188rem] lg:px-[5rem] xl:px-[9rem] 2xl:px-[11.875rem];
+    @apply pageMaxWidth px-[25px] sm:px-[48px] lg:px-[64px] xl:px-[120px] 2xl:px-[190px];
   }
 
   .pageBottomSpacing {
-    @apply pb-[3.75rem] xl:pb-[5.625rem];
+    @apply pb-[6rem];
   }
 
   .pageSpacing {
     @apply pageXSpacing pageBottomSpacing;
-    @apply pt-10 xl:pt-[3.75rem]; /* PADDING TOP */
+    @apply pt-[3.75rem]; /* PADDING TOP */
   }
 
   .firstPageSpacing {
-    @apply pageXSpacing pt-[calc(3.125rem+3.25rem)] xl:pt-[calc(4.375rem+5rem)]; /* PADDING TOP */
+    @apply pageXSpacing;
+    @apply pt-[9rem] xl:pt-[9.375rem]; /* PADDING TOP */
   }
 
   .mainFirstPageSpacing {
-    @apply pageXSpacing pt-[calc(3.125rem+3.25rem)] xl:pt-[calc(4.25rem+5rem)] 2xl:pt-[calc(6.25rem+5rem)]; /* PADDING TOP */
+    @apply pageXSpacing;
+    @apply pt-[9rem] xl:pt-[11.25rem]; /* PADDING TOP */
   }
 }
-
 
 /*
 
@@ -43,24 +44,16 @@
   
 */
 @layer utilities {
-  .navTitleSpacing {
-    @apply mb-[0.625rem] xl:mb-[0.938rem];
-  }
-
-  .titleDescSpacing {
-    @apply mb-[0.3125rem] xl:mb-[0.625rem];
-  }
-
   .firstContentSpacing {
-    @apply mt-10 xl:mt-[4.375rem];
+    @apply mt-[3.75rem];
   }
 
   /* AFTER THE FIRST CONTENT SPACING */
   .relatedContentSpacing {
-    @apply mt-[3.75rem] xl:mt-[6.25rem];
+    @apply mt-[6.25rem];
   }
 
   .unrelatedContentSpacing {
-    @apply mt-[4.688rem] xl:mt-[7.813rem];
+    @apply mt-[7.813rem];
   }
 }

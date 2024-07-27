@@ -1,9 +1,11 @@
-import { Main } from "./sections";
+import { Compare, Faqs, Main } from "./sections";
 
 const index = () => {
   return (
     <>
       <Main />
+      <Compare />
+      <Faqs />
     </>
   );
 };

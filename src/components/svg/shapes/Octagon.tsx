@@ -6,8 +6,9 @@ const Octagon = ({ fill = "#4338CA", ...props }: Props) => {
   return (
     <div {...props}>
       <svg
-        width="167"
-        height="170"
+        width="100%"
+        height="100%"
+        viewBox="0 0 170 170"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >

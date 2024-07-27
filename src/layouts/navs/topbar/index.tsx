@@ -18,7 +18,7 @@ const index = () => {
       </Link>
       {windowSize >= 3 ? (
         <>
-          <ul className="relative ml-[2rem] flex items-center gap-10 xl:ml-[4.5rem] xl:gap-12 2xl:ml-[5.625rem]">
+          <ul className="relative flex items-center gap-10 ml-[5.625rem]">
             {topbar.map((item) => (
               <li key={item.name}>
                 <NavLink

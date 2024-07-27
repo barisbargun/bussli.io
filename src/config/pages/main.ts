@@ -16,27 +16,6 @@ const main = {
   desc: "Easily create a consultancy website in minutes with unique, code-free blocks.",
   img: assets.images.other.heroOvalFemale,
   shape: Octagon,
-  company: {
-    title: "Join 400+ companies already growing",
-    companies: [
-      {
-        icon: assets.svg.icons.company.company,
-        title: "Company name"
-      },
-      {
-        icon: assets.svg.icons.company.company,
-        title: "Company name"
-      },
-      {
-        icon: assets.svg.icons.company.company,
-        title: "Company name"
-      },
-      {
-        icon: assets.svg.icons.company.company,
-        title: "Company name"
-      },
-    ]
-  }
 }
 
 const services = {

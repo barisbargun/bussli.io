@@ -5,8 +5,8 @@ type Props = (typeof mainText.choose.features)[0];
 
 const Feature = ({ title, desc, icon, iconColor }: Props) => {
   return (
-    <div className="flex gap-7">
-      <div className={cn("rounded-2xl size-20 p-5 box-content h-fit", iconColor)}>
+    <div className="flex gap-7 max-lg:flex-col">
+      <div className={cn("rounded-2xl w-8 lg:w-20 p-4 lg:p-5 box-content h-fit", iconColor)}>
         <img src={icon} alt="icon" className="size-full" />
       </div>
       <div className="flex flex-col gap-2">

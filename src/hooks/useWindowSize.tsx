@@ -6,7 +6,7 @@ const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState<WindowSize>(0);
   useEffect(() => {
     const handleMediaQueryChange = () => {
-      const width = window.outerWidth;
+      const width = window.innerWidth;
       if (width >= 1536) setWindowSize(5);
       else if (width >= 1280) setWindowSize(4);
       else if (width >= 1024) setWindowSize(3);

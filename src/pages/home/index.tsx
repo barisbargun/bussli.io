@@ -15,4 +15,3 @@ const index = () => {
 };
 
 export default index;
-// lg:mt-[4rem] xl:mt-[7rem] 2xl:mt-[9.44rem]
