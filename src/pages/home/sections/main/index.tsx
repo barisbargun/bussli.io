@@ -9,7 +9,7 @@ const index = () => {
   return (
     <Page
       page="MainFirstPage"
-      className="pageGradient min-h-screen sm:max-lg:min-h-fit sm:max-lg:pb-10"
+      className="pageGradient h-screen max-h-[1200px] sm:max-lg:min-h-fit sm:max-lg:pb-10"
       secondClassName="lg:justify-between max-lg:gap-[4.5rem] pb-4 lg:pb-10 2xl:pb-16 max-h-[70rem]"
     >
       <div className="flex justify-between gap-5">
@@ -19,7 +19,7 @@ const index = () => {
             title={config.title}
             titleType="mainTitle"
             desc={config.desc}
-            mobilePadding={false}
+            className="max-lg:px-0"
           />
           <GetStartedButton />
         </div>

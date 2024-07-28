@@ -13,11 +13,11 @@
   }
 
   .text-sm {
-    @apply max-xl:!text-[11.5px];
+    @apply max-xl:!text-[11.5px] max-xl:!leading-[16px];
   }
 
   .text-base {
-    @apply max-md:!text-[12px];
+    @apply max-md:!text-[12px] max-md:!leading-[17px];
   }
 }
 

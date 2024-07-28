@@ -1,6 +1,6 @@
-import { mainText } from "@/config/pages";
+import { companyText } from "@/config/pages/components";
 
-type Props = (typeof mainText.main.company.companies)[0];
+type Props = (typeof companyText.companies)[0];
 
 const Company = ({ icon, title }: Props) => {
   return (
@@ -10,9 +10,7 @@ const Company = ({ icon, title }: Props) => {
         alt="company-logo"
         className="size-[1.87rem] lg:size-9 xl:size-11"
       />
-      <p className="font-semibold text-lg">
-        {title}
-      </p>
+      <p className="text-lg font-semibold">{title}</p>
     </div>
   );
 };

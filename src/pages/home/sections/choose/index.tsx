@@ -7,16 +7,15 @@ const config = mainText.choose;
 const index = () => {
   return (
     <Page
-      page="Page"
       className="pageGradient relative"
       secondClassName="items-center static"
     >
       <PageTitle
         nav={config.nav}
         title={config.title}
-        className="max-w-[36rem] text-center"
+        className="text-center"
       />
-      <div className="firstContentSpacing max-sm:px-mobilePadding grid max-w-[56rem] grid-cols-2 gap-24 lg:gap-20">
+      <div className="firstContentSpacing max-sm:px-8 grid max-w-[56rem] grid-cols-2 gap-24 lg:gap-20">
         {config.features.map((v) => (
           <Feature {...v} key={v.title} />
         ))}

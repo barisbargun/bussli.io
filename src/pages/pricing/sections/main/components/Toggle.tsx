@@ -1,18 +1,22 @@
 import { ToggleButton } from "@/components/custom/buttons";
 import { pricingText } from "@/config/pages";
+import { cn } from "@/lib/utils";
 
-type Props = {
+type Props = React.HTMLAttributes<HTMLDivElement> & {
   isChecked: (v: boolean) => void;
 };
 
-const Toggle = ({ isChecked }: Props) => {
+const Toggle = ({ isChecked, ...props }: Props) => {
   return (
-    <div className="flex-center gap-4 text-lg">
+    <div
+      {...props}
+      className={cn("flex-center gap-4 text-lg", props.className)}
+    >
       <p>Monthly</p>
       <ToggleButton isChecked={(v) => isChecked(v)} />
       <div className="flex-center gap-3">
         <p>Yearly</p>
-        <div className="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-bold uppercase tracking-[1.4px] text-indigo-600">
+        <div className="font-poppins rounded-full bg-indigo-600/10 px-4 py-1.5 text-xs lg:text-sm font-bold uppercase tracking-wide text-indigo-600">
           Save {pricingText.pricingPackages.discount}%
         </div>
       </div>

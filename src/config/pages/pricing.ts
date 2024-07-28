@@ -16,7 +16,7 @@ const packages = pricingPackages.packages;
  */
 
 const main = {
-  title: "Pay Once, use forever",
+  title: "Pay Once, use forever!",
   desc: "Get started with Bussli.io - Web development app today and experience the power of our tools!",
   packageFeatures: [
     "Commercial License",
@@ -25,51 +25,48 @@ const main = {
     "6 Month Premium Support",
     "Lifetime Updates"
   ],
-  packages: {
-    basic: {
-      cost: {
-        monthly: packages.basic,
-        yearly: packages.basic * 12 * (100 - pricingPackages.discount) / 100
-      },
-      features: 3,
-      isCreditCardRequire: false
+  packages: [
+    {
+      type: "basic",
+      cost: packages.basic,
+      featureCount: 3,
+      isCreditCardRequire: false,
+      to: ""
     },
-    standart: {
-      cost: {
-        monthly: packages.standart,
-        yearly: packages.standart * 12 * (100 - pricingPackages.discount) / 100
-      },
-      features: 4,
-      isCreditCardRequire: false
+    {
+      type: "standart",
+      cost: packages.standart,
+      featureCount: 4,
+      isCreditCardRequire: false,
+      to: ""
     },
-    premium: {
-      cost: {
-        monthly: packages.premium,
-        yearly: packages.premium * 12 * (100 - pricingPackages.discount) / 100
-      },
-      features: 5,
-      isCreditCardRequire: false
+    {
+      type: "premium",
+      cost: packages.premium,
+      featureCount: 5,
+      isCreditCardRequire: false,
+      to: ""
     }
-  }
+  ]
 }
 
 const comparePlans = {
   title: "Compare plans & features",
   features: [
-    { f: "commercial license", b: true, s: true, p: true },
-    { f: "live support", b: false, s: "Email", p: "1-1 support" },
-    { f: "lifetime updates", b: false, s: false, p: false },
-    { f: "commercial license", b: true, s: true, p: true },
-    { f: "commercial license", b: true, s: true, p: true },
-    { f: "commercial license", b: true, s: true, p: true },
-    { f: "commercial license", b: true, s: true, p: true },
-    { f: "commercial license", b: true, s: true, p: true },
-    { f: "commercial license", b: true, s: true, p: true },
-    { f: "commercial license", b: true, s: true, p: true },
-    { f: "commercial license", b: true, s: true, p: true },
-    { f: "commercial license", b: true, s: true, p: true },
-    { f: "commercial license", b: true, s: true, p: true },
-  ],
+    { f: "commercial license", tip: "Bussli.io", b: true, s: true, p: true },
+    { f: "live support", tip: "Bussli.io", b: false, s: "Email", p: "1-1 support" },
+    { f: "lifetime updates", tip: "Bussli.io", b: false, s: false, p: false },
+    { f: "commercial license", tip: "Bussli.io", b: true, s: true, p: true },
+    { f: "commercial license", tip: "Bussli.io", b: true, s: true, p: true },
+    { f: "commercial license", tip: "Bussli.io", b: true, s: true, p: true },
+    { f: "commercial license", tip: "Bussli.io", b: true, s: true, p: true },
+    { f: "commercial license", tip: "Bussli.io", b: true, s: true, p: true },
+    { f: "commercial license", tip: "Bussli.io", b: true, s: true, p: true },
+    { f: "commercial license", tip: "Bussli.io", b: true, s: true, p: true },
+    { f: "commercial license", tip: "Bussli.io", b: true, s: true, p: true },
+    { f: "commercial license", tip: "Bussli.io", b: true, s: true, p: true },
+    { f: "commercial license", tip: "Bussli.io", b: true, s: true, p: true },
+  ] as { f: string, tip: string, b: any, s: any, p: any }[],
 }
 
 const faq = {

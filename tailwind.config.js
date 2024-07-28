@@ -17,9 +17,6 @@ module.exports = {
       },
     },
     extend: {
-      padding: {
-        mobilePadding:"2rem"
-      },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         spaceGrotesk: ["Space Grotesk", "sans-serif"],

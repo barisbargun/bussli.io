@@ -28,7 +28,7 @@
   }
 
   .firstPageSpacing {
-    @apply pageXSpacing;
+    @apply pageXSpacing pageBottomSpacing;
     @apply pt-[9rem] xl:pt-[9.375rem]; /* PADDING TOP */
   }
 

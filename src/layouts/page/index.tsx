@@ -5,21 +5,21 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   className?: string;
   secondClassName?: string;
-  page: "MainFirstPage" | "FirstPage" | "Page";
+  page?: "MainFirstPage" | "FirstPage" | "Page";
 }
 
 const Page = ({
   children,
   className,
   secondClassName,
-  page,
+  page="Page",
   ...props
 }: Props) => {
   return (
-    <div {...props} className={cn("flex w-full justify-center", className)}>
+    <section {...props} className={cn("flex w-full justify-center", className)}>
       <div
         className={cn(
-          "relative flex w-full flex-col",
+          "relative flex w-full flex-col [&>article]:overflow-hidden",
           page == "MainFirstPage"
             ? "mainFirstPageSpacing"
             : page == "FirstPage"
@@ -30,7 +30,7 @@ const Page = ({
       >
         {children}
       </div>
-    </div>
+    </section>
   );
 };
 

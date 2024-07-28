@@ -14,7 +14,7 @@ const GetStartedButton = ({ children, ...props }: Props) => {
         className={cn(
           "h-12 min-w-48",
           "text-center font-bold text-white text-lg",
-          "rounded-lg border border-solid border-indigo-500 bg-indigo-600 transition-all duration-200 hover:bg-indigo-800 active:bg-indigo-950",
+          "rounded-lg border border-solid border-indigo-500 bg-indigo-600 transition-all duration-100 hover:bg-indigo-700 active:bg-indigo-800",
           props.className,
         )}
       >
@@ -25,4 +25,3 @@ const GetStartedButton = ({ children, ...props }: Props) => {
 };
 
 export default GetStartedButton;
-// "h-[2.25rem] w-[9rem] xl:h-[50px] xl:w-[200px]",

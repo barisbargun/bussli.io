@@ -7,7 +7,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   titleType?: "mainTitle" | "pageTitle";
   desc?: string;
   className?: string;
-  mobilePadding?: boolean;
 }
 
 const PageTitle = ({
@@ -16,15 +15,16 @@ const PageTitle = ({
   titleType = "pageTitle",
   desc,
   className,
-  mobilePadding = true,
   ...props
 }: Props) => {
+  const HT = titleType == "mainTitle" ? "h1" : "h2";
+
   return (
     <div
       {...props}
       className={cn(
-        "flex flex-col",
-        mobilePadding && "px-mobilePadding",
+        "mx-auto flex flex-col max-lg:px-8",
+        titleType == "mainTitle" ? "max-w-[42rem]" : "max-w-[35rem]",
         className,
       )}
     >
@@ -34,14 +34,14 @@ const PageTitle = ({
         </h6>
       )}
       {title && (
-        <h1
+        <HT
           className={cn(
             titleType,
             nav && desc ? "mb-[5px] lg:mb-3" : desc && "mb-[10px] lg:mb-4",
           )}
         >
           {title}
-        </h1>
+        </HT>
       )}
       {desc && <p className="pageDesc">{desc}</p>}
     </div>

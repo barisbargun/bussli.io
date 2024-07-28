@@ -6,15 +6,15 @@ import { Card, Faq } from "./components";
 const config = mainText.pricing;
 const index = () => {
   return (
-    <Page page="Page" className="bg-indigo-600 relative" secondClassName="static">
+    <Page className="relative bg-indigo-600" secondClassName="static">
       <PageTitle
-        className="mx-auto max-w-[40rem] text-center text-white"
+        className="mx-auto text-center text-white"
         title={config.title}
         desc={config.desc}
       />
-      <div className="z-10 firstContentSpacing flex max-lg:flex-wrap lg:justify-between gap-10 max-sm:px-12 max-lg:sm:justify-center">
+      <div className="firstContentSpacing z-10 flex gap-10 max-lg:flex-wrap max-sm:px-12 max-lg:sm:justify-center lg:justify-between">
         {config.packages.map((card, i) => (
-          <Card className=" max-lg:sm:w-[calc(50%-1.25rem)]" key={i} {...card} />
+          <Card className="max-lg:sm:w-[calc(50%-1.25rem)]" key={i} {...card} />
         ))}
       </div>
 
@@ -24,7 +24,7 @@ const index = () => {
         ))}
       </div>
 
-      <div className="absolute top-[6.5rem] -left-4 h-[31.6rem] w-[20%] rounded-xl border-[3px] border-solid border-white/10 rectangleGradient opacity-50"></div>
+      <div className="rectangleGradient absolute -left-4 top-[6.5rem] h-[31.6rem] w-[20%] rounded-xl border-[3px] border-solid border-white/10 opacity-50"></div>
     </Page>
   );
 };

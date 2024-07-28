@@ -32,7 +32,6 @@ const index = () => {
 
   return (
     <Page
-      page="Page"
       className="pageGradient"
       secondClassName="pt-[3.75rem] xl:pt-[5.625rem] items-center"
     >

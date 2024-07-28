@@ -9,14 +9,14 @@ import { HoverEffect } from "@/components/custom/buttons";
 const config = mainText.studies;
 const index = () => {
   return (
-    <Page page="Page">
+    <Page>
       <PageTitle
         nav={config.nav}
         title={config.title}
-        className="m-auto max-w-[38rem] text-center"
+        className="m-auto text-center"
       />
       <div className="mt-[3.1rem] flex justify-between gap-[5.6rem]">
-        <div className="flex flex-col flex-1 gap-14 lg:gap-[3.75rem]">
+        <div className="flex flex-1 flex-col gap-14 lg:gap-[3.75rem]">
           <Product
             {...config.products[0]}
             img={config.productImages[0]}
@@ -24,7 +24,7 @@ const index = () => {
           />
           <Product {...config.products[1]} img={config.productImages[1]} />
         </div>
-        <div className="flex flex-col flex-1 gap-14 lg:gap-[3.75rem]">
+        <div className="flex flex-1 flex-col gap-14 lg:gap-[3.75rem]">
           <Product {...config.products[2]} img={config.productImages[2]} />
 
           <Product
@@ -36,7 +36,7 @@ const index = () => {
       </div>
 
       <Link
-        className="relatedContentSpacing flex-center relative gap-2 text-lg font-bold tracking-[-1.2px] text-indigo-600 m-auto"
+        className="relatedContentSpacing flex-center relative m-auto gap-2 text-lg font-bold tracking-[-1.2px] text-indigo-600"
         to={config.link.to}
       >
         {config.link.title}

@@ -2,7 +2,7 @@ import { baseConfig } from "@/config";
 import topbar from "@/config/nav/topbar";
 import { cn } from "@/lib/utils";
 import { Link, NavLink } from "react-router-dom";
-import { ActiveBar, DropdownMenu } from "./components";
+import { DropdownMenu } from "./components";
 import { useWindowSize } from "@/hooks";
 import { GetStartedButton } from "@/components/custom/buttons";
 
@@ -18,20 +18,23 @@ const index = () => {
       </Link>
       {windowSize >= 3 ? (
         <>
-          <ul className="relative flex items-center gap-10 ml-[5.625rem]">
+          <ul className="relative ml-[5.625rem] flex items-center gap-10">
             {topbar.map((item) => (
               <li key={item.name}>
                 <NavLink
                   to={item.url}
-                  className={cn(
-                    "text-nowrap font-semibold hover:text-indigo-600 max-xl:text-sm xl:font-bold",
-                  )}
+                  className={({ isActive }) =>
+                    cn(
+                      "relative text-nowrap font-semibold hover:text-indigo-600 max-xl:text-sm xl:font-bold",
+                      isActive &&
+                        "after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-[2px] after:bg-indigo-500 after:transition-all after:duration-300 after:ease-in-out",
+                    )
+                  }
                 >
                   {item.name}
                 </NavLink>
               </li>
             ))}
-            <ActiveBar />
           </ul>
           <span className="flex-grow"></span>
           <div className="float-right"></div>
