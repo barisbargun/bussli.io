@@ -19,5 +19,13 @@ export default {
       icon: assets.svg.icons.company.company,
       title: "Company name"
     },
+    {
+      icon: assets.svg.icons.company.company,
+      title: "Company name"
+    },
+    {
+      icon: assets.svg.icons.company.company,
+      title: "Company name"
+    },
   ]
 }

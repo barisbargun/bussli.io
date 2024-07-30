@@ -1,7 +1,11 @@
+import { Main } from "./sections";
+
 const index = () => {
   return (
-    <div>index</div>
-  )
-}
+    <>
+      <Main />
+    </>
+  );
+};
 
-export default index
+export default index;

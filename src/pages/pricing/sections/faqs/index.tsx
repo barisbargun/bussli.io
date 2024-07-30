@@ -10,7 +10,6 @@ const index = () => {
   return (
     <Page className="pageGradient">
       <PageTitle
-        className="text-center"
         title={config.title}
         desc={config.desc}
       />
@@ -25,7 +24,7 @@ const index = () => {
           <Accordion index={i} key={i} q={v.q} a={v.a} to={v.to} />
         ))}
       </AccordionComponent>
-      <div className="mt-16 text-center text-lg tracking-tight">
+      <div className="mt-10 text-center text-lg tracking-tight">
         <p className="inline">{config.cta.title}</p>
         <Link
           to={config.cta.link.to}

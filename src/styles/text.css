@@ -30,11 +30,11 @@
 }
 
 .mainTitle {
-  @apply text-6xl font-bold !leading-[105%] tracking-[-2px];
+  @apply text-7xl lg:text-6xl font-bold !leading-[105%] tracking-[-2px];
 }
 
 .pageTitle {
-  @apply text-3xl lg:text-4xl font-bold tracking-[-1.2px];
+  @apply text-4xl lg:text-4xl font-bold tracking-[-1.2px];
 }
 
 .pageDesc {

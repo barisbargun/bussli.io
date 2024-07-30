@@ -1,7 +1,13 @@
+import { Coders, Main, Team } from "./sections";
+
 const index = () => {
   return (
-    <div>index</div>
-  )
-}
+    <>
+      <Main />
+      <Coders />
+      <Team />
+    </>
+  );
+};
 
-export default index
+export default index;

@@ -8,15 +8,10 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
 
 const GetStartedButton = ({ children, ...props }: Props) => {
   return (
-    <Link className="w-fit" to={pageLinks.contact.url}>
+    <Link className="w-fit" to="/contact">
       <button
         {...props}
-        className={cn(
-          "h-12 min-w-48",
-          "text-center font-bold text-white text-lg",
-          "rounded-lg border border-solid border-indigo-500 bg-indigo-600 transition-all duration-100 hover:bg-indigo-700 active:bg-indigo-800",
-          props.className,
-        )}
+        className={cn("indigoButton text-nowrap", props.className)}
       >
         {children ? children : "Get Started"}
       </button>

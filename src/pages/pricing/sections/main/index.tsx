@@ -8,9 +8,8 @@ const config = pricingText.main;
 const index = () => {
   const [checked, setChecked] = useState(true);
   return (
-    <Page page="FirstPage" secondClassName="items-center">
+    <Page page="FirstPage">
       <PageTitle
-        className="text-center"
         title={config.title}
         titleType="mainTitle"
         desc={config.desc}

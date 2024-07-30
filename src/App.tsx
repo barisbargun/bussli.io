@@ -2,11 +2,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { About, Contact, Home, Pricing, Terms } from "./pages";
 import { MainLayout } from "./layouts";
 import { pageLinks } from "./config";
+import ScrollToTop from "./helpers/UseScrollToTop";
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop />
         <Routes>
           <Route path="" element={<MainLayout />}>
             <Route path="/" element={<Home />} />

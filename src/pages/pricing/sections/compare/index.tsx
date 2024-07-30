@@ -8,9 +8,9 @@ const packages = Object.keys(pricingText.pricingPackages.packages);
 const index = () => {
   return (
     <Page className="pageGradient">
-      <PageTitle className="text-center" title={config.title} />
+      <PageTitle title={config.title} />
 
-      <article className="firstContentSpacing flex w-full flex-col gap-10 lg:gap-7 overflow-hidden !overflow-x-scroll">
+      <article className="firstContentSpacing flex w-full flex-col gap-10 overflow-hidden max-lg:!overflow-x-scroll max-lg:pb-4 lg:gap-7">
         <Feature
           f="Features"
           tip=""

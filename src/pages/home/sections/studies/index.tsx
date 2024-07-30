@@ -9,11 +9,10 @@ import { HoverEffect } from "@/components/custom/buttons";
 const config = mainText.studies;
 const index = () => {
   return (
-    <Page>
+    <Page secondClassName="alskdal">
       <PageTitle
         nav={config.nav}
         title={config.title}
-        className="m-auto text-center"
       />
       <div className="mt-[3.1rem] flex justify-between gap-[5.6rem]">
         <div className="flex flex-1 flex-col gap-14 lg:gap-[3.75rem]">

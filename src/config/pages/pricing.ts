@@ -9,12 +9,12 @@ const pricingPackages = {
 
 const packages = pricingPackages.packages;
 
+
 /**
  * 
  * PAGE TITLES
  * 
  */
-
 const main = {
   title: "Pay Once, use forever!",
   desc: "Get started with Bussli.io - Web development app today and experience the power of our tools!",

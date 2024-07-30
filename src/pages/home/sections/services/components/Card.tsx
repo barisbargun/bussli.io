@@ -17,7 +17,7 @@ const Card = ({ card }: Props) => {
       )}
       key={card.title}
     >
-      <img src={card.illu} alt="illustration" className="h-[8rem]" />
+      <img loading="lazy" src={card.illu} alt="illustration" className="h-[8rem]" />
 
       <h3 className="mt-[2.36rem] text-2xl font-bold">{card.title}</h3>
       <p className="mb-[2.69rem] mt-[0.94rem] text-center text-base leading-7 opacity-65">

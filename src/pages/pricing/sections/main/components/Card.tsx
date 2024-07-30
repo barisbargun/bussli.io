@@ -16,6 +16,11 @@ const Card = ({
   isMonthly,
   featureList,
   fillColor = false,
+  featureCount,
+  cost,
+  isCreditCardRequire,
+  to,
+  type,
   ...props
 }: Props) => {
   return (
@@ -27,16 +32,16 @@ const Card = ({
         props.className,
       )}
     >
-      <h6 className="text-sm font-bold uppercase tracking-widest">
-        {props.type}
-      </h6>
+      <h3 className="text-sm font-bold uppercase tracking-widest">
+        {type}
+      </h3>
 
       <div className="">
         <span className="text-2xl font-bold">$</span>
         <h3 className="-ml-0.5 inline text-7xl lg:text-6xl font-bold tracking-tighter">
           {isMonthly
-            ? props.cost
-            : Math.round((props.cost * 12 * (100 - discount)) / 100)}
+            ? cost
+            : Math.round((cost * 12 * (100 - discount)) / 100)}
         </h3>
         <span className="font-lg ml-0.5">
           /&nbsp;{isMonthly ? "month" : "year"}
@@ -50,12 +55,12 @@ const Card = ({
         {featureList.map((v, i) => (
           <li
             className={
-              (cn(props.featureCount <= i && "opacity-70"),
+              (cn(featureCount <= i && "opacity-70"),
               "flex items-center gap-4 [&>svg]:size-8 xl:[&>svg]:size-7")
             }
             key={i}
           >
-            {props.featureCount > i ? (
+            {featureCount > i ? (
               <Check className="text-green-400" />
             ) : (
               <X className="opacity-30" />
@@ -66,7 +71,7 @@ const Card = ({
       </ul>
 
       <Button2
-        to={props.to}
+        to={to}
         title="Start Free Trial"
         className={cn(
           "mt-2 max-lg:max-w-[22rem]",
@@ -74,7 +79,7 @@ const Card = ({
         )}
       />
       <p className="-mt-2 tracking-tight opacity-70 max-lg:text-xs">
-        {props.isCreditCardRequire ? "C" : "No c"}redit card required
+        {isCreditCardRequire ? "C" : "No c"}redit card required
       </p>
     </li>
   );

@@ -12,7 +12,6 @@ type Props = React.HTMLAttributes<HTMLDivElement> &
   };
 
 const Accordion = ({ q, a, to, index, ...props }: Props) => {
-  console.log("index", index);
   return (
     <AccordionItem
       {...props}

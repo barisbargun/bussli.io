@@ -1,9 +1,11 @@
 import {
-  Tooltip as TooltipComponent,
-  TooltipContent,
+  HybridTooltip,
+  HybridTooltipContent,
+  HybridTooltipTrigger,
   TooltipProvider,
-  TooltipTrigger,
 } from "@/components/ui";
+
+import { cn } from "@/lib/utils";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   trigger: any;
@@ -14,12 +16,19 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {
 const Tooltip = ({ trigger, children, side = "bottom", ...props }: Props) => {
   return (
     <TooltipProvider delayDuration={200}>
-      <TooltipComponent>
-        <TooltipTrigger>{trigger}</TooltipTrigger>
-        <TooltipContent {...props} className={props.className} side={side}>
+      <HybridTooltip>
+        <HybridTooltipTrigger>{trigger}</HybridTooltipTrigger>
+        <HybridTooltipContent
+          {...props}
+          className={cn(
+            "!z-50 w-fit max-w-[15rem] break-all rounded-lg border border-gray-200 bg-white px-3 py-2 text-lg text-slate-900 shadow-md lg:text-base",
+            props.className,
+          )}
+          side={side}
+        >
           {children}
-        </TooltipContent>
-      </TooltipComponent>
+        </HybridTooltipContent>
+      </HybridTooltip>
     </TooltipProvider>
   );
 };

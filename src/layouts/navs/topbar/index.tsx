@@ -12,9 +12,9 @@ const index = () => {
   return (
     <nav className="navSpacing flex items-center justify-between gap-5 lg:justify-center">
       <Link to={"/"}>
-        <h2 className="logoTitle hover:text-indigo-500">
+        <strong className="logoTitle hover:text-indigo-500">
           {baseConfig.logo.name}
-        </h2>
+        </strong>
       </Link>
       {windowSize >= 3 ? (
         <>

@@ -8,7 +8,7 @@ const index = () => {
   return (
     <Page className="relative bg-indigo-600" secondClassName="static">
       <PageTitle
-        className="mx-auto text-center text-white"
+        className="text-white"
         title={config.title}
         desc={config.desc}
       />

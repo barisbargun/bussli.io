@@ -1,28 +1,67 @@
-import * as React from "react"
-import * as TooltipPrimitive from "@radix-ui/react-tooltip"
+"use client";
 
-import { cn } from "@/lib/utils"
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
-const TooltipProvider = TooltipPrimitive.Provider
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+import { Popover, PopoverTrigger, PopoverContent } from ".";
+import {
+  TooltipContentProps,
+  TooltipProps,
+  TooltipTriggerProps,
+} from "@radix-ui/react-tooltip";
+import {
+  PopoverContentProps,
+  PopoverProps,
+  PopoverTriggerProps,
+} from "@radix-ui/react-popover";
 
-const Tooltip = TooltipPrimitive.Root
+const TouchContext = createContext<boolean | undefined>(undefined);
+const useTouch = () => useContext(TouchContext);
 
-const TooltipTrigger = TooltipPrimitive.Trigger
+const TooltipProvider = (props: TooltipPrimitive.TooltipProviderProps) => {
+  const [isTouch, setTouch] = useState<boolean>();
 
-const TooltipContent = React.forwardRef<
-  React.ElementRef<typeof TooltipPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
-  <TooltipPrimitive.Content
-    ref={ref}
-    sideOffset={sideOffset}
-    className={cn(
-      "z-50 overflow-hidden rounded-md bg-slate-900 px-3 py-1.5 text-xs text-slate-50 animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 dark:bg-slate-50 dark:text-slate-900",
-      className
-    )}
-    {...props}
-  />
-))
-TooltipContent.displayName = TooltipPrimitive.Content.displayName
+  useEffect(() => {
+    setTouch(window.matchMedia("(pointer: coarse)").matches);
+  }, []);
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }
+  return (
+    <TouchContext.Provider value={isTouch}>
+      <TooltipPrimitive.Provider {...props}>{props.children}</TooltipPrimitive.Provider>
+    </TouchContext.Provider>
+  );
+};
+
+const HybridTooltip = (props: TooltipProps & PopoverProps) => {
+  const isTouch = useTouch();
+  const Content = isTouch ? Popover : TooltipPrimitive.Tooltip;
+  return <Content {...props} />;
+};
+
+const HybridTooltipTrigger = (
+  props: TooltipTriggerProps & PopoverTriggerProps,
+) => {
+  const isTouch = useTouch();
+  const Content = isTouch ? PopoverTrigger : TooltipPrimitive.Trigger;
+  return <Content {...props} />;
+};
+
+const HybridTooltipContent = (
+  props: TooltipContentProps & PopoverContentProps,
+) => {
+  const isTouch = useTouch();
+  const Content = isTouch ? PopoverContent : TooltipPrimitive.Content;
+  return <Content {...props} />;
+};
+
+export {
+  TooltipProvider,
+  HybridTooltip,
+  HybridTooltipTrigger,
+  HybridTooltipContent,
+};

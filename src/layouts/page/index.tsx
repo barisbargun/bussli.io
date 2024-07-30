@@ -1,23 +1,44 @@
 import { cn } from "@/lib/utils";
 import React from "react";
+import { HTMLMotionProps, motion } from "framer-motion";
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+type Props = HTMLMotionProps<"section"> & {
   children?: React.ReactNode;
   className?: string;
   secondClassName?: string;
   page?: "MainFirstPage" | "FirstPage" | "Page";
-}
+};
+
+const staggerContainer = (staggerChildren?: any, delayChildren?: any) => {
+  return {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: staggerChildren,
+        delayChildren: delayChildren || 0,
+      },
+    },
+  };
+};
 
 const Page = ({
   children,
   className,
   secondClassName,
-  page="Page",
+  page = "Page",
   ...props
 }: Props) => {
   return (
-    <section {...props} className={cn("flex w-full justify-center", className)}>
+    <motion.section
+      {...props}
+      variants={staggerContainer()}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, margin: "0px 0px -250px 0px" }}
+      className={cn("flex w-full justify-center", className)}
+    >
       <div
+        id={secondClassName}
         className={cn(
           "relative flex w-full flex-col [&>article]:overflow-hidden",
           page == "MainFirstPage"
@@ -30,7 +51,7 @@ const Page = ({
       >
         {children}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -6,7 +6,7 @@ type Props = (typeof footerText.links)[0];
 const MenuLink = ({ items, title }: Props) => {
   return (
     <div>
-      <h5 className="mb-8 sm:mb-4 opacity-70 font-light max-sm:text-[1.4rem]">{title}</h5>
+      <h3 className="mb-8 sm:mb-4 opacity-70 font-light max-sm:text-[1.4rem]">{title}</h3>
       <ul className="flex flex-col gap-8 sm:gap-3">
         {items.map((v) => (
           <li key={v.title}>

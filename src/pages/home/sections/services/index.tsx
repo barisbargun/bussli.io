@@ -8,7 +8,6 @@ const index = () => {
   return (
     <Page className="pageBottomSpacing">
       <PageTitle
-        className="m-auto text-center"
         nav={config.nav}
         title={config.title}
       />

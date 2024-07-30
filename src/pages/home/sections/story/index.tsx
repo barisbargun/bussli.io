@@ -12,9 +12,9 @@ const index = () => {
           <PageTitle
             nav={config.nav}
             title={config.title}
-            className="max-lg:px-0"
+            className="text-left max-lg:px-0"
           />
-          <img
+          <img loading="lazy"
             src={config.leftImg}
             alt="female-img"
             className="relative z-10 mt-[2rem] w-full sm:mt-[4rem]"
@@ -27,7 +27,7 @@ const index = () => {
         </div>
 
         <div className="relative max-lg:flex-auto">
-          <img src={config.rightImg} alt="male-img" className="" />
+          <img loading="lazy" src={config.rightImg} alt="male-img" className="" />
           <p className="pageDesc absolute max-sm:pt-12 sm:pt-7 lg:-left-[7.1rem]">
             {config.desc}
           </p>
