@@ -1,14 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import "./styles/globals.css";
-import { DataProvider } from "./context/useContext.tsx";
-import QueryProvider from "./lib/react-query/QueryProvider.tsx";
-import { HelmetProvider } from 'react-helmet-async';
-import "./lib/i18n.ts";
+import "./styles/globals.css"
+import "./lib/i18n.ts"
 
+import React from "react"
+import ReactDOM from "react-dom/client"
+import { HelmetProvider } from "react-helmet-async"
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+import App from "./App"
+import { DataProvider } from "./context/useContext"
+import QueryProvider from "./lib/react-query/QueryProvider"
+
+ReactDOM.createRoot(document.querySelector("#root")!).render(
   <React.StrictMode>
     <HelmetProvider>
       <DataProvider>
