@@ -1,22 +1,13 @@
-import "./styles/globals.css"
-import "./lib/i18n.ts"
+import './styles/globals.css'
+import './lib/i18n.ts'
 
-import React from "react"
-import ReactDOM from "react-dom/client"
-import { HelmetProvider } from "react-helmet-async"
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
-import App from "./App"
-import { DataProvider } from "./context/useContext"
-import QueryProvider from "./lib/react-query/QueryProvider"
+import App from './app'
 
-ReactDOM.createRoot(document.querySelector("#root")!).render(
+ReactDOM.createRoot(document.querySelector('#root')!).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <DataProvider>
-        <QueryProvider>
-          <App />
-        </QueryProvider>
-      </DataProvider>
-    </HelmetProvider>
-  </React.StrictMode>,
-);
+    <App />
+  </React.StrictMode>
+)

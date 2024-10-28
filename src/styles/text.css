@@ -25,7 +25,7 @@
   @apply text-2xl font-bold;
 }
 
-.pageNavTitle {
+/* .pageNavTitle {
   @apply text-sm font-semibold uppercase text-rose-500 tracking-[1.2px];
 }
 
@@ -39,4 +39,4 @@
 
 .pageDesc {
   @apply text-xl leading-[150%] opacity-70 lg:text-xl;
-}
+} */
