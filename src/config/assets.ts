@@ -38,7 +38,6 @@ const svg = {
       chat: getSvg(`${p.colorfulIcons}chat`),
       clock: getSvg(`${p.colorfulIcons}clock`),
       layers: getSvg(`${p.colorfulIcons}layers`),
-
       personComputer: getSvg(`${p.colorfulIcons}personComputer`),
     },
     company: {
@@ -51,7 +50,6 @@ const svg = {
     designerLife: getSvg(`${p.illustrations}designerLife`),
     imageViewer: getSvg(`${p.illustrations}imageViewer`),
     proudCoder: getSvg(`${p.illustrations}proudCoder`),
-
   },
 }
 
