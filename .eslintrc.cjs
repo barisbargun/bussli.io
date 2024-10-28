@@ -9,8 +9,8 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    // 'plugin:react/recommended',
-    // 'plugin:jsx-a11y/recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
     "plugin:prettier/recommended",
     "plugin:testing-library/react",
     "plugin:jest-dom/recommended",
@@ -19,7 +19,7 @@ module.exports = {
   ],
   plugins: [
     "simple-import-sort",
-    // 'import',
+    'import',
     "tailwindcss",
     "check-file",
   ],
@@ -144,13 +144,13 @@ module.exports = {
     ],
     "unicorn/no-empty-file": "off",
   },
-  // overrides: [
-  //   {
-  //     files: ['src/assets/**/*.ts'],
-  //     rules: {
-  //       'import/no-anonymous-default-export': 'off',
-  //       'unicorn/prevent-abbreviations': 'off'
-  //     }
-  //   }
-  // ]
+  overrides: [
+    {
+      files: ['src/assets/**/*.ts'],
+      rules: {
+        'import/no-anonymous-default-export': 'off',
+        'unicorn/prevent-abbreviations': 'off'
+      }
+    }
+  ]
 };
