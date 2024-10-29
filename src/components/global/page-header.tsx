@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 function PageHeader({ className, children, ...props }: HTMLMotionProps<'section'>) {
   return (
     <motion.section
-      className={cn('mx-auto flex flex-col text-center max-lg:px-8', className)}
+      className={cn('flex flex-col max-lg:px-8 max-w-[60vw] text-balance', className)}
       {...props}
     >
       {children}
