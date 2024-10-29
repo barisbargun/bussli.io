@@ -1,26 +1,26 @@
 import { Link, NavLink } from 'react-router-dom'
 
 import {
-  DropdownMenu as DropdownMenuComponent,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
+    DropdownMenu as DropdownMenuComponent,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import { baseConfig } from '@/config'
-import assets from '@/config/assets'
+import { assets } from '@/config/assets'
+import { baseConfig } from '@/config/config'
 import { topbarConfig } from '@/config/topbar'
 import useWindowSize from '@/hooks/use-window-size'
 import { cn } from '@/lib/utils'
 
-import ButtonGetStarted from '../shared/button-get-started'
+import { ButtonGetStarted } from '../shared/buttons/button-get-started'
 
-const Navbar = () => {
+export const Navbar = () => {
   const windowSize = useWindowSize()
 
   return (
-    <nav className="navSpacing flex items-center justify-between gap-5 lg:justify-center">
+    <nav className="navSpacing container flex max-w-[1300px] items-center justify-between gap-5 pt-[1.875rem] lg:justify-center">
       <Link to="/">
         <strong className="logoTitle hover:text-indigo-500">{baseConfig.logo.name}</strong>
       </Link>
@@ -77,5 +77,3 @@ const Navbar = () => {
     </nav>
   )
 }
-
-export default Navbar

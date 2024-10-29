@@ -1,4 +1,4 @@
-import { pageLinks } from '.'
+import { pageLinks } from './config'
 
 export interface TopbarConfig {
   name: string

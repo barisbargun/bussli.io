@@ -1,9 +1,9 @@
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+type Props = React.HTMLAttributes<HTMLDivElement> & {
   fill?: string
   pathClassName?: string
 }
 
-const FacebookIcon = ({ fill = '#7D818D', pathClassName, ...props }: Props) => {
+export const FacebookIcon = ({ fill = '#7D818D', pathClassName, ...props }: Props) => {
   return (
     <div {...props}>
       <svg
@@ -22,5 +22,3 @@ const FacebookIcon = ({ fill = '#7D818D', pathClassName, ...props }: Props) => {
     </div>
   )
 }
-
-export default FacebookIcon

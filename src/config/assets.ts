@@ -1,6 +1,6 @@
 const getSvg = (path: string) => `/assets/svg/${path}.svg`
-const itarateDir = (n: number, path: string, extension = 'avif') =>
-  [...new Array(n).keys()].map((index) => `/assets/${path}${index + 1}.${extension}`)
+const iterateDir = (n: number, path: string, extension = 'avif') =>
+  [...Array.from({ length: n }).keys()].map((index) => `/assets/${path}${index + 1}.${extension}`)
 
 const p = {
   /** IMAGES */
@@ -20,10 +20,10 @@ const p = {
 
 const images = {
   /** itareted images */
-  brands: itarateDir(4, p.brands, 'jpg'),
-  skilledPeople: itarateDir(4, p.skilledPeople, 'jpg'),
-  teamAvatars: itarateDir(7, p.teamAvatars, 'jpg'),
-  testimonials: itarateDir(1, p.testimonials, 'png'),
+  brands: iterateDir(4, p.brands, 'jpg'),
+  skilledPeople: iterateDir(4, p.skilledPeople, 'jpg'),
+  teamAvatars: iterateDir(7, p.teamAvatars, 'jpg'),
+  testimonials: iterateDir(1, p.testimonials, 'png'),
 
   other: {
     darkHairFemale: `${p.other}dark-hair-female.png`,
@@ -50,8 +50,10 @@ const svg = {
   illustrations: {
     designerLife: getSvg(`${p.illustrations}designerLife`),
     imageViewer: getSvg(`${p.illustrations}imageViewer`),
-    proudCoder: getSvg(`${p.illustrations}proudCoder`),
+    proudCoder: getSvg(`${p.illustrations}proudCoder`)
   }
 }
 
-export default { images, svg }
+const assets = { images, svg }
+
+export { assets }

@@ -1,8 +1,8 @@
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+type Props = React.HTMLAttributes<HTMLDivElement> & {
   fill?: string
 }
 
-const OctagonIcon = ({ fill = '#4338CA', ...props }: Props) => {
+export const OctagonIcon = ({ fill = '#4338CA', ...props }: Props) => {
   return (
     <div {...props}>
       <svg
@@ -22,5 +22,3 @@ const OctagonIcon = ({ fill = '#4338CA', ...props }: Props) => {
     </div>
   )
 }
-
-export default OctagonIcon

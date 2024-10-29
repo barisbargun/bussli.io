@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom'
 
-import { baseConfig } from '@/config'
+import { baseConfig } from '@/config/config'
 import { footerConfig } from '@/config/footer'
 
-import Cta from './cta'
+import { Cta } from './cta'
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="flex w-full justify-center bg-gray-900 py-[3.75rem] text-white lg:py-[5.625rem]">
-      <div className="pageXSpacing">
+      <div className="container">
         <Cta />
         <div className="relatedContentSpacing flex max-lg:flex-col-reverse max-lg:gap-24">
           <div className="lg:max-w-80">
             <h3 className="text-3xl font-bold tracking-tight">{baseConfig.logo.name}</h3>
-            <p className="mb-12 mt-8 font-light leading-7 opacity-70">{footerConfig.desc}</p>
+            <p className="mb-12 mt-8 font-light leading-7 opacity-70">
+              Create your next landing page effortlessly with unique, code-free blocks.
+            </p>
             <div className="flex items-center gap-7">
               {footerConfig.socialMedia.map((v, index) => (
                 <Link key={index} to={v.to}>
@@ -36,7 +38,7 @@ const Footer = () => {
   )
 }
 
-const MenuLink = ({ items, title }: (typeof footerConfig.links)[0]) => {
+export const MenuLink = ({ items, title }: (typeof footerConfig.links)[0]) => {
   return (
     <div>
       <h3 className="mb-8 font-light opacity-70 max-sm:text-[1.4rem] sm:mb-4">{title}</h3>
@@ -55,5 +57,3 @@ const MenuLink = ({ items, title }: (typeof footerConfig.links)[0]) => {
     </div>
   )
 }
-
-export default Footer

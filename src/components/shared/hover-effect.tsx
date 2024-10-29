@@ -1,10 +1,10 @@
 import { cn } from '@/lib/utils'
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+type Props = React.HTMLAttributes<HTMLDivElement> & {
   light?: boolean
 }
 
-const HoverEffect = ({ light = true, className, ...props }: Props) => {
+export const HoverEffect = ({ light = true, className, ...props }: Props) => {
   return (
     <div
       {...props}
@@ -18,5 +18,3 @@ const HoverEffect = ({ light = true, className, ...props }: Props) => {
     />
   )
 }
-
-export default HoverEffect

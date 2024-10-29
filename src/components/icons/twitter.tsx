@@ -1,9 +1,9 @@
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+type Props = React.HTMLAttributes<HTMLDivElement> & {
   fill?: string
   pathClassName?: string
 }
 
-const TwitterIcon = ({ fill = '#7D818D', pathClassName, ...props }: Props) => {
+export const TwitterIcon = ({ fill = '#7D818D', pathClassName, ...props }: Props) => {
   return (
     <div {...props}>
       <svg
@@ -24,5 +24,3 @@ const TwitterIcon = ({ fill = '#7D818D', pathClassName, ...props }: Props) => {
     </div>
   )
 }
-
-export default TwitterIcon
