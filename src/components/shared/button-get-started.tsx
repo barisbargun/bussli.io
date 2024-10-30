@@ -6,7 +6,7 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode
 }
 
-const ButtonGetStarted = ({ children, ...props }: Props) => {
+export const ButtonGetStarted = ({ children, ...props }: Props) => {
   return (
     <Link className="w-fit" to="/contact">
       <button {...props} className={cn('indigoButton text-nowrap', props.className)}>
@@ -15,5 +15,3 @@ const ButtonGetStarted = ({ children, ...props }: Props) => {
     </Link>
   )
 }
-
-export default ButtonGetStarted

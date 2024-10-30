@@ -4,7 +4,7 @@ import ButtonGetStarted from '../shared/button-get-started'
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {}
 
-const Cta = ({ className, ...props }: Props) => {
+export const Cta = ({ className, ...props }: Props) => {
   return (
     <div {...props} className={cn('flex w-full items-center justify-between gap-16', className)}>
       <div>
@@ -17,5 +17,3 @@ const Cta = ({ className, ...props }: Props) => {
     </div>
   )
 }
-
-export default Cta

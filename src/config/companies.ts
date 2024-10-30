@@ -1,7 +1,6 @@
-import { assets } from '@/config'
+import assets from './assets'
 
 export interface CompanyConfig {
-  title: string
   companies: {
     icon: string
     title: string
@@ -9,7 +8,6 @@ export interface CompanyConfig {
 }
 
 export const companiesConfig: CompanyConfig = {
-  title: 'Join 400+ companies already growing',
   companies: [
     {
       icon: assets.svg.icons.company.company,

@@ -7,7 +7,7 @@ type Props = React.HTMLProps<HTMLDivElement> & {
   checkedColor?: string
 }
 
-const ToggleButton = ({
+export const ToggleButton = ({
   isChecked,
   className,
   checkedColor = 'bg-indigo-600',
@@ -38,5 +38,3 @@ const ToggleButton = ({
     </div>
   )
 }
-
-export default ToggleButton

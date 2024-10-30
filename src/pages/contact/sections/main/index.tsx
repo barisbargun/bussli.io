@@ -1,7 +1,7 @@
-import { PageTitle } from "@/components/others";
-import { contactText } from "@/config/pages";
-import { Page } from "@/layouts";
-import { ContactInfo, Form } from "./components";
+import { PageTitle } from "@/components/others"
+import { contactText } from "@/config/pages"
+import { Page } from "@/layouts"
+import { ContactInfo, Form } from "./components"
 
 const config = contactText;
 const contact = [config.phone, config.email, config.location];

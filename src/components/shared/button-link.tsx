@@ -10,7 +10,7 @@ type Props = React.HTMLAttributes<HTMLAnchorElement> & {
   to?: string
 }
 
-const ButtonLink = ({ title, icon = ArrowRight, to = '', ...props }: Props) => {
+export const ButtonLink = ({ title, icon = ArrowRight, to = '', ...props }: Props) => {
   const Icon = icon
   return (
     <Link
@@ -22,11 +22,8 @@ const ButtonLink = ({ title, icon = ArrowRight, to = '', ...props }: Props) => {
       to={to}
     >
       {title}
-      <h2>
-      </h2>
+      <h2></h2>
       <Icon className="w-5" />
     </Link>
   )
 }
-
-export default ButtonLink

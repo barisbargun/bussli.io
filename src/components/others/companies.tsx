@@ -2,25 +2,16 @@ import { motion } from 'framer-motion'
 
 import { companiesConfig } from '@/config/companies'
 import useWindowSize from '@/hooks/use-window-size'
-import effects from '@/lib/motions'
+import motions from '@/lib/motions'
 import { cn } from '@/lib/utils'
 
-// const staggerVariants: Variants = {
-//   initial: { opacity: 0, x: -100 },
-//   animate: (index_) => ({
-//     opacity: 1,
-//     x: 0,
-//     transition: {
-//       type: 'spring',
-//       delay: index_ * 0.5,
-//       duration: 0.75,
-//       ease: 'easeOut'
-//     }
-//   })
-// }
+type CompanyProps = {
+  icon: string
+  title: string
+  index: number
+}
 
-const config = companiesConfig
-const Companies = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+const CompanyLogos = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
   const windowSize = useWindowSize()
   return (
     <div
@@ -30,32 +21,30 @@ const Companies = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>
         className
       )}
     >
-      <motion.p className="text-xs opacity-65" custom={2} variants={effects.fadeIn({})}>
-        {config.title}
+      <motion.p className="text-xs opacity-65" custom={2} variants={motions.fadeIn({})}>
+        Join 400+ companies already growing
       </motion.p>
       <div className="flex w-full justify-between gap-y-10 max-lg:flex-wrap sm:gap-x-1 lg:gap-0">
-        {config.companies.slice(0, windowSize >= 3 ? 4 : 8).map((v, index_) => (
-          <motion.div
-            key={index_}
-            custom={index_}
-            variants={effects.fadeIn({
-              direction: 'left',
-              duration: 0.5,
-              directionAmount: 100,
-              delay: 0.4
-            })}
-          >
-            <Company {...v} />
-          </motion.div>
+        {companiesConfig.companies.slice(0, windowSize >= 3 ? 4 : 8).map((v, index) => (
+          <CompanyLogo key={v.title} index={index} {...v} />
         ))}
       </div>
     </div>
   )
 }
 
-const Company = ({ icon, title }: (typeof config.companies)[0]) => {
+const CompanyLogo = ({ icon, title, index }: CompanyProps) => {
   return (
-    <div className="flex-center gap-1 md:gap-2">
+    <motion.div
+      className="flex-center gap-1 md:gap-2"
+      custom={index}
+      variants={motions.fadeIn({
+        direction: 'left',
+        directionAmount: 100,
+        duration: 0.5,
+        delay: 0.4
+      })}
+    >
       <img
         alt="company-logo"
         className="size-[1.87rem] lg:size-9 xl:size-11"
@@ -63,8 +52,8 @@ const Company = ({ icon, title }: (typeof config.companies)[0]) => {
         src={icon}
       />
       <p className="text-xl font-semibold lg:text-lg">{title}</p>
-    </div>
+    </motion.div>
   )
 }
 
-export default Companies
+export { CompanyLogo, CompanyLogos }

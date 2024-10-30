@@ -2,10 +2,14 @@ import { HTMLMotionProps, motion } from 'framer-motion'
 
 import { cn } from '@/lib/utils'
 
-function PageHeader({ className, children, ...props }: HTMLMotionProps<'section'>) {
+type PageHeaderProps = HTMLMotionProps<'section'> & {
+  useMotion?: boolean
+}
+
+function PageHeader({ className, children, ...props }: PageHeaderProps) {
   return (
     <motion.section
-      className={cn('flex flex-col max-lg:px-8 max-w-[60vw] text-balance', className)}
+      className={cn('flex max-w-[60vw] flex-col text-balance', className)}
       {...props}
     >
       {children}

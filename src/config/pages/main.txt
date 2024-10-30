@@ -53,41 +53,6 @@ const services = {
   ]
 }
 
-const testimonials = [
-  {
-    stars: 5,
-    title:
-      'OMG! I cannot believe that I have got a brand new landing page after getting Bussli. It was super easy to edit and publish.',
-    user: 'Franklin Hicks',
-    job: 'Web Developer',
-    img: assets.images.testimonials[0]
-  },
-  {
-    stars: 3,
-    title:
-      'OMG! I cannot believe that I have got a brand new landing page after getting Bussli. It was super easy to edit and publish.',
-    user: 'Franklin Hicks',
-    job: 'Web Developer',
-    img: assets.images.testimonials[0]
-  },
-  {
-    stars: 3,
-    title:
-      'OMG! I cannot believe that I have got a brand new landing page after getting Bussli. It was super easy to edit and publish.',
-    user: 'Franklin Hicks',
-    job: 'Web Developer',
-    img: assets.images.testimonials[0]
-  },
-  {
-    stars: 3,
-    title:
-      'OMG! I cannot believe that I have got a brand new landing page after getting Bussli. It was super easy to edit and publish.',
-    user: 'Franklin Hicks',
-    job: 'Web Developer',
-    img: assets.images.testimonials[0]
-  }
-]
-
 const story = {
   nav: 'Our Story',
   title: 'We understand the root causes of your business struggles and how to fix them.',
@@ -199,7 +164,6 @@ const pricing = {
 const mainConfig = {
   main,
   services,
-  testimonials,
   story,
   choose,
   studies,

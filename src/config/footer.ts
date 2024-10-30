@@ -4,7 +4,6 @@ import LinkedinIcon from '@/components/icons/linkedin'
 import TwitterIcon from '@/components/icons/twitter'
 
 export interface FooterConfig {
-  desc: string
   socialMedia: {
     icon: any
     to: string
@@ -19,7 +18,6 @@ export interface FooterConfig {
 }
 
 export const footerConfig: FooterConfig = {
-  desc: 'Create your next landing page effortlessly with unique, code-free blocks.',
   socialMedia: [
     {
       icon: TwitterIcon,

@@ -1,14 +1,21 @@
+import { HTMLMotionProps, motion } from 'framer-motion'
 import React from 'react'
 
 import { cn } from '@/lib/utils'
 
-type Props = React.HTMLAttributes<HTMLDivElement> & {
+type Props = HTMLMotionProps<'section'> & {
   spaceType?: 'MainFirstPage' | 'FirstPage' | 'Page'
   nestedClassName?: React.ComponentProps<'div'>['className']
   children?: React.ReactNode
 }
 
-const PageSection = ({
+const paddingClasses = {
+  MainFirstPage: 'pt-[9rem] xl:pt-[11.25rem]',
+  FirstPage: 'pb-[6rem] pt-[9rem] xl:pt-[9.375rem]',
+  Page: 'pb-[6rem] pt-[3.75rem]'
+}
+
+export const PageSection = ({
   spaceType = 'Page',
   nestedClassName,
   className,
@@ -16,21 +23,30 @@ const PageSection = ({
   ...props
 }: Props) => {
   return (
-    <section className={className}>
+    <motion.section
+      className={className}
+      initial="hidden"
+      variants={{
+        hidden: {},
+        show: {
+          transition: {
+            staggerChildren: 0.2,
+          }
+        }
+      }}
+      viewport={{ once: true, amount: 0.2, margin: '0px 0px -250px 0px' }}
+      whileInView="show"
+      {...props}
+    >
       <div
         className={cn(
-          'pageXSpacing mx-auto flex flex-col',
-          spaceType === 'MainFirstPage' && 'pt-[9rem] xl:pt-[11.25rem]',
-          spaceType === 'FirstPage' && 'pageBottomSpacing pt-[9rem] xl:pt-[9.375rem]',
-          spaceType === 'Page' && 'pageBottomSpacing pt-[3.75rem]',
+          'container mx-auto flex flex-col',
+          paddingClasses[spaceType],
           nestedClassName
         )}
-        {...props}
       >
         {children}
       </div>
-    </section>
+    </motion.section>
   )
 }
-
-export default PageSection
