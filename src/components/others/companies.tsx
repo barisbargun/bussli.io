@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 import { companiesConfig } from '@/config/companies'
 import useWindowSize from '@/hooks/use-window-size'
-import motions from '@/lib/motions'
+import { motions } from '@/lib/motions'
 import { cn } from '@/lib/utils'
 
 type CompanyProps = {

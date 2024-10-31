@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 
 import { cn } from '@/lib/utils'
 
-import HoverEffect from '../shared/hover-effect'
+import { HoverEffect } from '../shared/hover-effect'
 import { CardBody, CardContainer, CardItem } from '../ui/card-3d'
 
 type Props = {
   card: any
 }
 
-export const ServiceCard = ({ card }: Props) => {
+export const CardService = ({ card }: Props) => {
   return (
     <CardContainer key={card.title} className={cn('rounded-xl shadow-lg', card.color)}>
       <CardBody className="flex size-auto flex-1 flex-col items-center px-[1.68rem] pb-[2.38rem] pt-[3.13rem] text-center max-lg:basis-1/3 max-sm:basis-full">

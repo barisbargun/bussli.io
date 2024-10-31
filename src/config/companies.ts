@@ -1,4 +1,4 @@
-import assets from './assets'
+import { assets } from './assets'
 
 export interface CompanyConfig {
   companies: {
@@ -15,23 +15,23 @@ export const companiesConfig: CompanyConfig = {
     },
     {
       icon: assets.svg.icons.company.company,
-      title: 'Company name'
+      title: 'Company name2'
     },
     {
       icon: assets.svg.icons.company.company,
-      title: 'Company name'
+      title: 'Company name3'
     },
     {
       icon: assets.svg.icons.company.company,
-      title: 'Company name'
+      title: 'Company name4'
     },
     {
       icon: assets.svg.icons.company.company,
-      title: 'Company name'
+      title: 'Company name5'
     },
     {
       icon: assets.svg.icons.company.company,
-      title: 'Company name'
+      title: 'Company name6'
     }
   ]
 }

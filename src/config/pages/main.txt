@@ -2,7 +2,7 @@ import OctagonIcon from '@/components/icons/octagon'
 import RectangleIcon from '@/components/icons/rectangle'
 import SquareIcon from '@/components/icons/square'
 
-import assets from '../assets'
+import {assets} from '@/assets'
 import { pricingPackages } from './pricing'
 
 const packages = pricingPackages.packages

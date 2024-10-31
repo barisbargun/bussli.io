@@ -54,4 +54,6 @@ const svg = {
   }
 }
 
-export default { images, svg }
+const assets = { images, svg }
+
+export { assets }

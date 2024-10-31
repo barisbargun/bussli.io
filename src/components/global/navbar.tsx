@@ -1,20 +1,20 @@
 import { Link, NavLink } from 'react-router-dom'
 
 import {
-  DropdownMenu as DropdownMenuComponent,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
+    DropdownMenu as DropdownMenuComponent,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import assets from '@/config/assets'
+import { assets } from '@/config/assets'
 import { baseConfig } from '@/config/config'
 import { topbarConfig } from '@/config/topbar'
 import useWindowSize from '@/hooks/use-window-size'
 import { cn } from '@/lib/utils'
 
-import ButtonGetStarted from '../shared/button-get-started'
+import { ButtonGetStarted } from '../shared/button-get-started'
 
 export const Navbar = () => {
   const windowSize = useWindowSize()

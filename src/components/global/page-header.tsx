@@ -3,13 +3,17 @@ import { HTMLMotionProps, motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 type PageHeaderProps = HTMLMotionProps<'section'> & {
-  useMotion?: boolean
+  center?: boolean
 }
 
-function PageHeader({ className, children, ...props }: PageHeaderProps) {
+function PageHeader({ className, children, center, ...props }: PageHeaderProps) {
   return (
     <motion.section
-      className={cn('flex max-w-[60vw] flex-col text-balance', className)}
+      className={cn(
+        'flex max-w-3xl flex-col text-balance',
+        center && 'mx-auto text-center',
+        className
+      )}
       {...props}
     >
       {children}

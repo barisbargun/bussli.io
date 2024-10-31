@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 
 type Props = HTMLMotionProps<'section'> & {
   spaceType?: 'MainFirstPage' | 'FirstPage' | 'Page'
-  nestedClassName?: React.ComponentProps<'div'>['className']
+  nestedClassName?: string;
   children?: React.ReactNode
 }
 

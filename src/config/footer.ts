@@ -1,7 +1,7 @@
-import FacebookIcon from '@/components/icons/facebook'
-import InstagramIcon from '@/components/icons/instagram'
-import LinkedinIcon from '@/components/icons/linkedin'
-import TwitterIcon from '@/components/icons/twitter'
+import { FacebookIcon } from '@/components/icons/facebook'
+import { InstagramIcon } from '@/components/icons/instagram'
+import { LinkedinIcon } from '@/components/icons/linkedin'
+import { TwitterIcon } from '@/components/icons/twitter'
 
 export interface FooterConfig {
   socialMedia: {

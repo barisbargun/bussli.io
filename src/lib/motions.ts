@@ -62,4 +62,6 @@ const textVariant = ({ top = -50, delay }: TextVariantProps) => {
   }
 }
 
-export default { fadeIn, textVariant }
+const motions = { fadeIn, textVariant }
+
+export { motions }

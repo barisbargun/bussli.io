@@ -4,7 +4,7 @@ import { GetStartedButton } from '@/components/custom/buttons'
 import { Companies, PageTitle } from '@/components/others'
 import { mainText } from '@/config/pages'
 import { Page } from '@/layouts'
-import motions from '@/lib/motions'
+import { motions } from '@/lib/motions'
 import { cn } from '@/lib/utils'
 
 const config = mainText.main
