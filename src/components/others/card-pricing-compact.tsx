@@ -16,7 +16,7 @@ type Props = React.HTMLAttributes<HTMLLIElement> & {
   type: string
 }
 
-export const Card = ({
+export const CardPricingCompact = ({
   discount,
   isMonthly,
   featureList,

@@ -7,7 +7,7 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {
   index: number
 }
 
-export const Accordion = ({ q, a, index, ...props }: Props) => {
+export const AccordionFaq = ({ q, a, index, ...props }: Props) => {
   return (
     <AccordionItem
       {...props}
