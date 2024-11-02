@@ -1,7 +1,9 @@
-import { QualitiesConfig } from '@/config/features/qualities'
 import { cn } from '@/lib/utils'
 
-type Props = React.HTMLAttributes<HTMLDivElement> & QualitiesConfig
+type Props = React.HTMLAttributes<HTMLDivElement> & {
+  title: string
+  desc: string
+}
 
 export const Quality = ({ desc, title, className, ...props }: Props) => {
   return (

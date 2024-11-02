@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { CardPricingCompact } from '@/components/shared/cards/card-pricing-compact'
 import {
   PageHeader,
   PageHeaderDescription,
@@ -10,6 +9,7 @@ import {
 } from '@/components/global/page-header'
 import { PageSection } from '@/components/global/page-section'
 import { AccordionFaq } from '@/components/shared/accordion-faq'
+import { CardPricingCompact } from '@/components/shared/cards/pricing-compact'
 import { CompanyLogos } from '@/components/shared/companies'
 import { ComparePricing } from '@/components/shared/compare-pricing'
 import { Toggle } from '@/components/shared/toggle'

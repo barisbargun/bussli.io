@@ -1,25 +1,25 @@
 const baseConfig = {
   logo: {
-    name: "Bussli.io"
+    name: 'Bussli.io'
   }
 }
 
 const pageLinks = {
   home: {
-    url: "home",
+    url: 'home'
   },
   pricing: {
-    url: "pricing",
+    url: 'pricing'
   },
   about: {
-    url: "about",
+    url: 'about'
   },
   terms: {
-    url: "terms",
+    url: 'terms'
   },
   contact: {
-    url: "contact",
+    url: 'contact'
   }
 }
 
-export { baseConfig, pageLinks };
+export { baseConfig, pageLinks }

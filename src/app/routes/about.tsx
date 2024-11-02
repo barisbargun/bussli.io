@@ -8,7 +8,7 @@ import {
   PageHeaderSubHeading
 } from '@/components/global/page-header'
 import { PageSection } from '@/components/global/page-section'
-import { CardHoverImage } from '@/components/shared/cards/card-hover-image'
+import { CardHoverImage } from '@/components/shared/cards/hover-image'
 import { HoverEffect } from '@/components/shared/hover-effect'
 import { assets } from '@/config/assets'
 import { teamConfig } from '@/config/features/team'

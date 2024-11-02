@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 import { cn } from '@/lib/utils'
 
-import { HoverEffect } from '../hover-effect'
 import { CardBody, CardContainer, CardItem } from '../../ui/card-3d'
+import { HoverEffect } from '../hover-effect'
 
 type Props = {
   card: any

@@ -1,12 +1,13 @@
 import React from 'react'
 
-import { ProductsConfig } from '@/config/features/products'
 import { cn } from '@/lib/utils'
 
-type Props = React.HTMLAttributes<HTMLDivElement> &
-  ProductsConfig & {
-    size?: 'base' | 'long'
-  }
+type Props = React.HTMLAttributes<HTMLDivElement> & {
+  nav: string
+  title: string
+  img: string
+  size?: 'base' | 'long'
+}
 
 export const Product = ({ nav, title, img, size = 'base', ...props }: Props) => {
   return (

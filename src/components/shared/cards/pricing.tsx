@@ -1,7 +1,7 @@
 import { PricingPackagesConfig } from '@/config/features/pricing/packages'
 import { cn } from '@/lib/utils'
 
-import { ButtonGetStarted } from '../buttons/button-get-started'
+import { ButtonGetStarted } from '../buttons/get-started'
 
 type Props = React.HTMLAttributes<HTMLDivElement> & PricingPackagesConfig
 

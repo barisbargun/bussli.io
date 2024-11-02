@@ -15,7 +15,7 @@ export const Toggle = ({ checked, setChecked, discount, ...props }: Props) => {
       <p>Monthly</p>
       <Switch checked={checked} onCheckedChange={setChecked} />
       <p>Yearly</p>
-      <Badge >Save {discount}%</Badge>
+      <Badge>Save {discount}%</Badge>
     </div>
   )
 }

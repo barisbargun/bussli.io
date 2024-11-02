@@ -2,7 +2,7 @@ import { Check, X } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 
-import { ButtonLink } from '../buttons/button-link'
+import { ButtonLink } from '../buttons/link'
 
 type Props = React.HTMLAttributes<HTMLLIElement> & {
   discount: number

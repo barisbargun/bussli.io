@@ -5,7 +5,7 @@ export interface TopbarConfig {
   url: string
 }
 
-export const topbarConfig: ITopbar[] = [
+export const topbarConfig: TopbarConfig[] = [
   {
     name: 'Request a demo',
     url: pageLinks.contact.url

@@ -42,11 +42,11 @@ export const footerConfig: FooterConfig = {
       items: [
         {
           title: 'About us',
-          to: ''
+          to: 'about'
         },
         {
           title: 'Contact us',
-          to: ''
+          to: 'contact'
         },
         {
           title: 'Careers',
@@ -67,7 +67,7 @@ export const footerConfig: FooterConfig = {
         },
         {
           title: 'Pricing',
-          to: ''
+          to: 'pricing'
         },
         {
           title: 'News',
@@ -113,7 +113,7 @@ export const footerConfig: FooterConfig = {
         },
         {
           title: 'Terms & Conditions',
-          to: ''
+          to: 'terms'
         },
         {
           title: 'Return Policy',

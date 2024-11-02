@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 
-import { ButtonGetStarted } from '../shared/buttons/button-get-started'
+import { ButtonGetStarted } from '../shared/buttons/get-started'
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {}
 

@@ -20,8 +20,8 @@ const ContactInfo = ({ title, list, address, icon: Icon }: Props) => {
   )
 
   return (
-    <div className="flex flex-col items-center text-center gap-1">
-      <div className='flex gap-2'>
+    <div className="flex flex-col items-center gap-1 text-center">
+      <div className="flex gap-2">
         <Icon className="size-8 text-indigo-600 lg:size-6" />
         <h3 className="mb-1 text-2xl font-bold lg:text-xl">{title}</h3>
       </div>
