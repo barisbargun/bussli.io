@@ -1,5 +1,5 @@
 const getSvg = (path: string) => `/assets/svg/${path}.svg`
-const iterateDir = (n: number, path: string, extension = 'avif') =>
+const iterateDirectory = (n: number, path: string, extension = 'avif') =>
   [...Array.from({ length: n }).keys()].map((index) => `/assets/${path}${index + 1}.${extension}`)
 
 const p = {
@@ -20,10 +20,10 @@ const p = {
 
 const images = {
   /** itareted images */
-  brands: iterateDir(4, p.brands, 'jpg'),
-  skilledPeople: iterateDir(4, p.skilledPeople, 'jpg'),
-  teamAvatars: iterateDir(7, p.teamAvatars, 'jpg'),
-  testimonials: iterateDir(1, p.testimonials, 'png'),
+  brands: iterateDirectory(4, p.brands, 'jpg'),
+  skilledPeople: iterateDirectory(4, p.skilledPeople, 'jpg'),
+  teamAvatars: iterateDirectory(7, p.teamAvatars, 'jpg'),
+  testimonials: iterateDirectory(1, p.testimonials, 'png'),
 
   other: {
     darkHairFemale: `${p.other}dark-hair-female.png`,
@@ -50,7 +50,8 @@ const svg = {
   illustrations: {
     designerLife: getSvg(`${p.illustrations}designerLife`),
     imageViewer: getSvg(`${p.illustrations}imageViewer`),
-    proudCoder: getSvg(`${p.illustrations}proudCoder`)
+    proudCoder: getSvg(`${p.illustrations}proudCoder`),
+    notFound: getSvg(`${p.illustrations}not-found`)
   }
 }
 
