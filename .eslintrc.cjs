@@ -11,6 +11,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
     'plugin:testing-library/react',
@@ -132,7 +133,8 @@ module.exports = {
         'import/no-anonymous-default-export': 'off',
         'unicorn/prevent-abbreviations': 'off',
         'unicorn/no-null': 'off',
-        '@typescript-eslint/no-empty-object-type': 'off'
+        '@typescript-eslint/no-empty-object-type': 'off',
+        'react-hooks/exhaustive-deps': 'off',
       }
     },
     {
