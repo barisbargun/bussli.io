@@ -34,7 +34,7 @@ export const PageSection = ({
           }
         }
       }}
-      viewport={{ once: true, amount: 0.2, margin: '0px 0px -250px 0px' }}
+      viewport={{ once: true, amount: 0.2, margin: '0px 0px -100px 0px' }}
       whileInView="show"
       {...props}
     >
