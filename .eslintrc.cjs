@@ -51,19 +51,9 @@ module.exports = {
           // disables cross-feature imports:
           // eg. src/features/discussions should not import from src/features/comments, etc.
           {
-            target: './src/features/editor-canvas',
+            target: './src/features/contact',
             from: './src/features',
-            except: ['./editor-canvas']
-          },
-          {
-            target: './src/features/file-uploader',
-            from: './src/features',
-            except: ['./file-uploader']
-          },
-          {
-            target: './src/features/workflows',
-            from: './src/features',
-            except: ['./workflows']
+            except: ['./contact']
           },
           // enforce unidirectional codebase:
 
@@ -136,6 +126,15 @@ module.exports = {
     'unicorn/no-empty-file': 'off'
   },
   overrides: [
+    {
+      files: ['src/components/ui/**/*.tsx'],
+      rules: {
+        'import/no-anonymous-default-export': 'off',
+        'unicorn/prevent-abbreviations': 'off',
+        'unicorn/no-null': 'off',
+        '@typescript-eslint/no-empty-object-type': 'off'
+      }
+    },
     {
       files: ['src/assets/**/*.ts'],
       rules: {
