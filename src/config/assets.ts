@@ -20,16 +20,16 @@ const p = {
 
 const images = {
   /** itareted images */
-  brands: iterateDirectory(4, p.brands, 'jpg'),
-  skilledPeople: iterateDirectory(4, p.skilledPeople, 'jpg'),
-  teamAvatars: iterateDirectory(7, p.teamAvatars, 'jpg'),
-  testimonials: iterateDirectory(1, p.testimonials, 'png'),
+  brands: iterateDirectory(4, p.brands, 'avif'),
+  skilledPeople: iterateDirectory(4, p.skilledPeople, 'avif'),
+  teamAvatars: iterateDirectory(7, p.teamAvatars, 'avif'),
+  testimonials: iterateDirectory(1, p.testimonials, 'avif'),
 
   other: {
-    darkHairFemale: `${p.other}dark-hair-female.png`,
-    heroOvalFemale: `${p.other}hero-oval-female.png`,
-    orangeBgMale: `${p.other}orange-bg-male.png`,
-    team: `${p.other}team.jpg`
+    darkHairFemale: `${p.other}dark-hair-female.avif`,
+    heroOvalFemale: `${p.other}hero-oval-female.avif`,
+    orangeBgMale: `${p.other}orange-bg-male.avif`,
+    team: `${p.other}team.avif`
   }
 }
 
