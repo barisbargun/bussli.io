@@ -13,6 +13,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
+
     'plugin:prettier/recommended',
     'plugin:testing-library/react',
     'plugin:jest-dom/recommended',
@@ -22,6 +23,14 @@ module.exports = {
   plugins: ['simple-import-sort', 'import', 'tailwindcss', 'check-file'],
   rules: {
     'linebreak-style': ['error', 'unix'],
+
+    'prettier/prettier': [
+      'warn',
+      {
+        usePrettierrc: false
+      }
+    ],
+
     'tailwindcss/enforces-shorthand': 'warn',
     'tailwindcss/no-unnecessary-arbitrary-value': 'warn',
     'react/prop-types': 'off',
@@ -42,7 +51,6 @@ module.exports = {
 
     'import/newline-after-import': 'warn',
     'import/no-duplicates': 'warn',
-    'import/no-cycle': 'warn',
     'import/no-named-as-default-member': 'off',
     'import/no-named-as-default': 'off',
     'import/no-restricted-paths': [
@@ -70,26 +78,6 @@ module.exports = {
             from: ['./src/features', './src/app']
           }
         ]
-      }
-    ],
-
-    '@typescript-eslint/explicit-function-return-type': ['off'],
-    '@typescript-eslint/explicit-module-boundary-types': ['off'],
-    '@typescript-eslint/no-empty-function': ['off'],
-    '@typescript-eslint/no-explicit-any': ['off'],
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-        caughtErrorsIgnorePattern: '^_'
-      }
-    ],
-
-    'prettier/prettier': [
-      'warn',
-      {
-        usePrettierrc: false
       }
     ],
 
@@ -124,7 +112,20 @@ module.exports = {
         }
       }
     ],
-    'unicorn/no-empty-file': 'off'
+    'unicorn/no-empty-file': 'off',
+
+    '@typescript-eslint/explicit-function-return-type': ['off'],
+    '@typescript-eslint/explicit-module-boundary-types': ['off'],
+    '@typescript-eslint/no-empty-function': ['off'],
+    '@typescript-eslint/no-explicit-any': ['off'],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_'
+      }
+    ]
   },
   overrides: [
     {
@@ -134,7 +135,7 @@ module.exports = {
         'unicorn/prevent-abbreviations': 'off',
         'unicorn/no-null': 'off',
         '@typescript-eslint/no-empty-object-type': 'off',
-        'react-hooks/exhaustive-deps': 'off',
+        'react-hooks/exhaustive-deps': 'off'
       }
     },
     {
