@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
+import { Helmet } from '@/components/global/helmet'
 import {
   PageHeader,
   PageHeaderDescription,
@@ -14,9 +15,12 @@ import { assets } from '@/config/assets'
 import { teamConfig } from '@/config/features/team'
 
 const skilledPeople = assets.images.skilledPeople
+
 export const AboutRoute = () => {
   return (
     <>
+      <Helmet title="About" />
+
       {/** Main */}
       <PageSection spaceType="FirstPage">
         <PageHeader center>

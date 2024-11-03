@@ -3,6 +3,7 @@ import { ArrowRightIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import { Cta } from '@/components/global/cta'
+import { Helmet } from '@/components/global/helmet'
 import {
   PageHeader,
   PageHeaderDescription,
@@ -38,6 +39,8 @@ import { cn } from '@/lib/utils'
 export const LandingRoute = () => {
   return (
     <>
+      <Helmet />
+
       {/** Main */}
       <PageSection
         className="pageGradient"

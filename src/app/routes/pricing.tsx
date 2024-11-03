@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import { Helmet } from '@/components/global/helmet'
 import {
   PageHeader,
   PageHeaderDescription,
@@ -27,6 +28,8 @@ export const PricingRoute = () => {
   const [checked, setChecked] = useState(true)
   return (
     <>
+      <Helmet title="Pricing" />
+
       {/** Main */}
       <PageSection className="pageGradient" nestedClassName="min-h-screen" spaceType="FirstPage">
         <PageHeader center>
