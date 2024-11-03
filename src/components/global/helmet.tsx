@@ -9,7 +9,11 @@ const helmetData = new HelmetData({})
 
 export const Helmet = ({ title = '', description = '' }: HeadProps = {}) => {
   return (
-    <ReactHelmet defaultTitle="Bussli.io" helmetData={helmetData} title={title ?? undefined}>
+    <ReactHelmet
+      defaultTitle="Bussli.io"
+      helmetData={helmetData}
+      title={title ? `${title} - Bussli.io` : undefined}
+    >
       <meta content={description} name="description" />
     </ReactHelmet>
   )
