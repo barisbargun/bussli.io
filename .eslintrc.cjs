@@ -35,15 +35,11 @@ module.exports = {
     'tailwindcss/no-unnecessary-arbitrary-value': 'warn',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-sort-props': [
-      'warn',
-      {
-        callbacksLast: true,
-        shorthandFirst: true,
-        noSortAlphabetically: false,
-        reservedFirst: true
-      }
-    ],
+    'react/jsx-sort-props': ['warn',{
+      callbacksLast: true,
+      shorthandFirst: true,
+      noSortAlphabetically: true,
+    }],
     'jsx-a11y/anchor-is-valid': 'off',
     'jsx-a11y/heading-has-content': 'off',
     'simple-import-sort/imports': 'warn',
