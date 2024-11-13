@@ -22,7 +22,7 @@ export const Navbar = () => {
   return (
     <nav className="navSpacing container flex max-w-[1300px] items-center justify-between gap-5 pt-[1.875rem] lg:justify-center">
       <Link to="/">
-        <strong className="logoTitle hover:text-indigo-500">{baseConfig.logo.name}</strong>
+        <strong className="text-2xl font-bold hover:text-indigo-500">{baseConfig.logo.name}</strong>
       </Link>
       {windowSize >= 3 ? (
         <>
@@ -64,7 +64,7 @@ export const Navbar = () => {
               <DropdownMenuLabel>Bussli.io</DropdownMenuLabel>
               <DropdownMenuSeparator />
               {topbarConfig.map((item) => (
-                <DropdownMenuItem key={item.name} asChild>
+                <DropdownMenuItem asChild key={item.name}>
                   <Link className="w-full max-lg:py-1" to={item.url}>
                     {item.name}
                   </Link>
