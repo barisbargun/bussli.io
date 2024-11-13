@@ -5,12 +5,6 @@ import useWindowSize from '@/hooks/use-window-size'
 import { motions } from '@/lib/motions'
 import { cn } from '@/lib/utils'
 
-type CompanyProps = {
-  icon: string
-  title: string
-  index: number
-}
-
 const CompanyLogos = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
   const windowSize = useWindowSize()
   return (
@@ -33,7 +27,7 @@ const CompanyLogos = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
   )
 }
 
-const CompanyLogo = ({ icon, title, index }: CompanyProps) => {
+const CompanyLogo = ({ icon, title, index }: { icon: string; title: string; index: number }) => {
   return (
     <motion.div
       className="flex-center gap-1 md:gap-2"
@@ -48,8 +42,9 @@ const CompanyLogo = ({ icon, title, index }: CompanyProps) => {
       <img
         alt="company-logo"
         className="size-[1.87rem] lg:size-9 xl:size-11"
-        loading="lazy"
         src={icon}
+        width={44}
+        height={45}
       />
       <p className="text-xl font-semibold lg:text-lg">{title}</p>
     </motion.div>

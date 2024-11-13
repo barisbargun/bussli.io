@@ -74,7 +74,14 @@ const Testimonial = ({
   return (
     <CarouselItem className="flex-center">
       <div className="flex-center max-w-[80%] gap-10">
-        <img alt="user-img" className="size-[9.3rem] rounded-full" loading="lazy" src={img} />
+        <img
+          width={150}
+          height={150}
+          alt="user-img"
+          className="size-[9.3rem] rounded-full"
+          loading="lazy"
+          src={img}
+        />
         <div className="flex flex-col">
           <div className="flex gap-1">
             {[...Array.from({ length: stars }).keys()].map((_, index) => (

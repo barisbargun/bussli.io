@@ -33,8 +33,10 @@ export const AboutRoute = () => {
         <img
           alt="team-img"
           className="firstContentSpacing w-full rounded-xl"
-          loading="lazy"
           src={assets.images.other.team}
+          width={930}
+          height={453}
+          fetchPriority="high"
         />
         <div className="relatedContentSpacing flex justify-between gap-5 max-sm:flex-col sm:gap-20">
           <h2 className="text-4xl font-bold tracking-tight sm:flex-[0_0_45%]">
@@ -54,8 +56,11 @@ export const AboutRoute = () => {
       </PageSection>
 
       {/** Skilled coders */}
-      <PageSection className="pageGradient" nestedClassName="flex-row items-center justify-between">
-        <PageHeader className="max-w-xl">
+      <PageSection
+        className="pageGradient"
+        nestedClassName="items-center justify-between md:flex-row"
+      >
+        <PageHeader className="max-md:mx-auto max-md:text-center md:max-w-xl">
           <PageHeaderSubHeading>High skilled coders from worldwide.</PageHeaderSubHeading>
           <PageHeaderDescription>
             We share trends and strategies to boost your rental income and keep you in high demand.
@@ -66,14 +71,28 @@ export const AboutRoute = () => {
             of our tools!
           </PageHeaderDescription>
         </PageHeader>
-        <div className="max-lg:firstContentSpacing flex gap-6 lg:w-[25rem] xl:w-[29rem]">
+        <div className="max-lg:firstContentSpacing flex w-full gap-6 sm:w-[70vw] md:w-[25rem] xl:w-[29rem]">
           <div className="flex h-full w-1/2 flex-col gap-6">
-            <CardHoverImage alt="skilled-people-1" img={skilledPeople[0]} />
-            <CardHoverImage alt="skilled-people-2" img={skilledPeople[1]} />
+            {skilledPeople.slice(0, 2).map((source, index) => (
+              <CardHoverImage
+                key={index}
+                alt={`skilled-people-${index + 1}`}
+                src={source}
+                width={225}
+                height={273}
+              />
+            ))}
           </div>
           <div className="flex h-full w-1/2 flex-col gap-6 pt-16 lg:pt-9">
-            <CardHoverImage alt="skilled-people-3" img={skilledPeople[2]} />
-            <CardHoverImage alt="skilled-people-4" img={skilledPeople[3]} />
+            {skilledPeople.slice(2, 4).map((source, index) => (
+              <CardHoverImage
+                key={index}
+                alt={`skilled-people-${index + 1}`}
+                src={source}
+                width={225}
+                height={273}
+              />
+            ))}
           </div>
         </div>
       </PageSection>
@@ -89,7 +108,14 @@ export const AboutRoute = () => {
         </PageHeader>
         <div className="firstContentSpacing grid grid-cols-2 gap-x-8 gap-y-16 sm:grid-cols-3 lg:grid-cols-4">
           {teamConfig.map((v, index) => (
-            <CardHoverImage key={v.name} alt={`member-${index + 1}`} {...v} />
+            <CardHoverImage
+              key={v.name}
+              alt={`member-${index + 1}`}
+              width={265}
+              height={356}
+              desc={v.role}
+              {...v}
+            />
           ))}
           <div className="flex-center size-full">
             <Link className="flex-center relative gap-3 text-xl font-bold text-indigo-600" to="#">

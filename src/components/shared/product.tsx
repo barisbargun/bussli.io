@@ -23,6 +23,8 @@ export const Product = ({ nav, title, img, size = 'base', ...props }: Props) => 
         )}
         loading="lazy"
         src={img}
+        width={530}
+        height={size == 'long' ? 540 : 340}
       />
       <div className="mt-8 flex flex-col pl-0 lg:pl-2">
         <p className="text-sm opacity-70">{nav}</p>

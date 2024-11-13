@@ -16,15 +16,15 @@ import { OctagonIcon } from '@/components/icons/octagon'
 import { RectangleIcon } from '@/components/icons/rectangle'
 import { SquareIcon } from '@/components/icons/square'
 import { ButtonGetStarted } from '@/components/shared/buttons/get-started'
-import { CardPricing } from '@/components/shared/cards/pricing'
+import { CardBasic } from '@/components/shared/cards/basic'
 import { CardService } from '@/components/shared/cards/service'
 import { CompanyLogos } from '@/components/shared/companies'
 import { Faq } from '@/components/shared/faq'
-import { Feature } from '@/components/shared/feature'
 import { HoverEffect } from '@/components/shared/hover-effect'
 import { Product } from '@/components/shared/product'
 import { Quality } from '@/components/shared/quality'
 import { Testimonial, TestimonialProvider } from '@/components/shared/testimonial'
+
 import { assets } from '@/config/assets'
 import { faqsConfig } from '@/config/features/faqs'
 import { featuresConfig } from '@/config/features/features'
@@ -35,6 +35,7 @@ import { servicesConfig } from '@/config/features/services'
 import { testimonialsConfig } from '@/config/features/testimonials'
 import { motions } from '@/lib/motions'
 import { cn } from '@/lib/utils'
+import { CardPricing } from '@/components/shared/cards/pricing'
 
 export const LandingRoute = () => {
   return (
@@ -69,8 +70,10 @@ export const LandingRoute = () => {
             <img
               alt="female-img-oval"
               className="relative z-10 w-full rounded-full"
-              loading="lazy"
               src={assets.images.other.heroOvalFemale}
+              width={420}
+              height={420}
+              fetchPriority="high"
             />
             <OctagonIcon
               className={cn(
@@ -103,7 +106,20 @@ export const LandingRoute = () => {
                 delay: 0.4
               })}
             >
-              <CardService key={card.title} card={card} />
+              <CardService
+                key={card.title}
+                img={
+                  <img
+                    alt="illustration"
+                    width={200}
+                    height={128}
+                    className="h-32"
+                    src={card.illustration}
+                    loading="lazy"
+                  />
+                }
+                {...card}
+              />
             </motion.div>
           ))}
         </div>
@@ -136,6 +152,8 @@ export const LandingRoute = () => {
               className="relative z-10 mt-8 w-full sm:mt-16"
               loading="lazy"
               src={assets.images.other.darkHairFemale}
+              width={425}
+              height={458}
             />
 
             <OctagonIcon
@@ -150,6 +168,8 @@ export const LandingRoute = () => {
               className=""
               loading="lazy"
               src={assets.images.other.orangeBgMale}
+              width={470}
+              height={597}
             />
             <p className="pageDesc absolute max-sm:pt-12 sm:pt-7 lg:-left-[7.1rem]">
               We share trends and strategies to boost your rental income and ensure high demand.
@@ -175,7 +195,7 @@ export const LandingRoute = () => {
         </PageHeader>
         <div className="firstContentSpacing grid max-w-4xl grid-cols-2 gap-24 max-sm:px-8 lg:gap-20">
           {featuresConfig.map((v) => (
-            <Feature {...v} key={v.title} />
+            <CardBasic {...v} key={v.title} />
           ))}
         </div>
 
@@ -221,9 +241,10 @@ export const LandingRoute = () => {
             Effortlessly create your next landing page with unique, code-free blocks.
           </PageHeaderDescription>
         </PageHeader>
-        <div className="firstContentSpacing z-10 flex gap-10 max-lg:flex-wrap max-sm:px-12 max-lg:sm:justify-center lg:justify-between">
+        <div className="firstContentSpacing z-10 flex gap-12 max-xl:flex-wrap max-xl:sm:justify-center lg:justify-between">
           {pricingPackagesConfig.map((card, index) => (
-            <CardPricing key={index} className="max-lg:sm:w-[calc(50%-1.25rem)]" {...card} />
+            <CardPricing key={index} className="mx-auto" {...card} />
+            
           ))}
         </div>
 
