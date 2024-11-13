@@ -73,7 +73,7 @@ export const LandingRoute = () => {
               src={assets.images.other.heroOvalFemale}
               width={420}
               height={420}
-              fetchPriority="high"
+              {...{ fetchpriority: "high" } as any}
             />
             <OctagonIcon
               className={cn(

@@ -36,7 +36,7 @@ export const AboutRoute = () => {
           src={assets.images.other.team}
           width={930}
           height={453}
-          fetchPriority="high"
+          {...{ fetchpriority: "high" } as any}
         />
         <div className="relatedContentSpacing flex justify-between gap-5 max-sm:flex-col sm:gap-20">
           <h2 className="text-4xl font-bold tracking-tight sm:flex-[0_0_45%]">
