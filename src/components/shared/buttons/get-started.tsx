@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
 
 interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode
@@ -9,9 +10,9 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
 export const ButtonGetStarted = ({ children, ...props }: Props) => {
   return (
     <Link className="w-fit" to="/contact">
-      <button {...props} className={cn('indigoButton text-nowrap', props.className)}>
+      <Button className={cn('text-nowrap', props.className)} variant='indigo' size='xl' {...props}>
         {children ?? 'Get Started'}
-      </button>
+      </Button>
     </Link>
   )
 }
