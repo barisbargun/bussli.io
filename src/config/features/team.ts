@@ -15,5 +15,5 @@ export const teamConfig: TeamConfig[] = [
   { src: images[3], name: 'Jacob Jones', role: 'Digital Marketer' },
   { src: images[4], name: 'Albert Flores', role: 'UX Designer' },
   { src: images[5], name: 'Kristin Watson', role: 'Lead Programmer' },
-  { src: images[6], name: 'Joe Bridges', role: 'Programmer' }
+  { src: images[6], name: 'Jacob Hawkins', role: 'Programmer' }
 ]
