@@ -8,7 +8,7 @@ export interface ServicesConfig {
     name: string
     url: string
   }
-  illu: string
+  illustration: string
 }
 
 export const servicesConfig: ServicesConfig[] = [
@@ -20,7 +20,7 @@ export const servicesConfig: ServicesConfig[] = [
       name: 'Learn more',
       url: ''
     },
-    illu: assets.svg.illustrations.designerLife
+    illustration: assets.svg.illustrations.designerLife
   },
   {
     color: 'bg-indigo-600',
@@ -30,7 +30,7 @@ export const servicesConfig: ServicesConfig[] = [
       name: 'Learn more',
       url: ''
     },
-    illu: assets.svg.illustrations.proudCoder
+    illustration: assets.svg.illustrations.proudCoder
   },
   {
     color: 'bg-red-500',
@@ -40,6 +40,6 @@ export const servicesConfig: ServicesConfig[] = [
       name: 'Learn more',
       url: ''
     },
-    illu: assets.svg.illustrations.imageViewer
+    illustration: assets.svg.illustrations.imageViewer
   }
 ]

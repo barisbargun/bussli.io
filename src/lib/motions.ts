@@ -22,8 +22,8 @@ const fadeIn = ({
 }: FadeInProps) => {
   return {
     hidden: {
-      x: direction === 'left' ? -directionAmount : (direction === 'right' ? directionAmount : 0),
-      y: direction === 'up' ? -directionAmount : (direction === 'down' ? directionAmount : 0),
+      x: direction === 'left' ? -directionAmount : direction === 'right' ? directionAmount : 0,
+      y: direction === 'up' ? -directionAmount : direction === 'down' ? directionAmount : 0,
       opacity: 0
     },
     show: (time: number) => ({

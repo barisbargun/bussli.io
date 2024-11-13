@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { HelmetProvider } from 'react-helmet-async'
 
 type AppProviderProps = {

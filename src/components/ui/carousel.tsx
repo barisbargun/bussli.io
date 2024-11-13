@@ -113,7 +113,7 @@ const Carousel = React.forwardRef<
       .on('reInit', tweenSettings)
       .on('scroll', tweenSettings)
       .on('slideFocus', tweenSettings)
-  }, [api, tweenSettings])
+  }, [api, setTweenFactor, tweenSettings])
 
   const onSelect = React.useCallback((api: CarouselApi) => {
     if (!api) {

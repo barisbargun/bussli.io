@@ -1,8 +1,8 @@
-import { Check, X } from 'lucide-react'
+import { ArrowRight, Check, X } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-
-import { ButtonLink } from '../buttons/link'
 
 type Props = React.HTMLAttributes<HTMLLIElement> & {
   discount: number
@@ -17,10 +17,10 @@ type Props = React.HTMLAttributes<HTMLLIElement> & {
 }
 
 export const CardPricingCompact = ({
-  discount,
   isMonthly = false,
-  featureList,
   fillColor = false,
+  discount,
+  featureList,
   featureCount,
   cost,
   isCreditCardRequire,
@@ -68,15 +68,20 @@ export const CardPricingCompact = ({
           </li>
         ))}
       </ul>
+      <Link to={to}>
+        <Button
+          variant="indigoTransparent"
+          size="xl"
+          className={cn(
+            'px-5 font-bold w-full',
+            fillColor && 'bg-white/10 hover:bg-white/15 active:bg-white/20'
+          )}
+        >
+          Start Free Trial
+          <ArrowRight className="w-5" />
+        </Button>
+      </Link>
 
-      <ButtonLink
-        className={cn(
-          'mt-2 max-lg:max-w-[22rem]',
-          fillColor && 'bg-white/10 hover:bg-white/15 active:bg-white/20'
-        )}
-        title="Start Free Trial"
-        to={to}
-      />
       <p className="-mt-2 tracking-tight opacity-70 max-lg:text-xs">
         {isCreditCardRequire ? 'Credit' : 'No credit'} card required
       </p>

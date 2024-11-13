@@ -1,24 +1,17 @@
-import { cn } from '@/lib/utils'
+import React from 'react'
 
-import { HoverImageEffect, HoverImageItem, HoverImageProvider } from '../hover-image'
+import { HoverImageEffect, HoverImageItem, HoverImageProvider } from '../../ui/hover-image'
 
-type Props = {
-  img: string
-  alt: string
-  aspect?: 'sm' | 'md' | 'lg'
+type Props = React.ImgHTMLAttributes<HTMLImageElement> & {
   name?: string
-  role?: string
+  desc?: string
 }
 
-export const CardHoverImage = ({ img, alt, aspect = 'md', name, role }: Props) => {
+export const CardHoverImage = ({ name, desc, ...props }: Props) => {
   const ImageEffect = () => (
     <HoverImageProvider>
       <HoverImageEffect />
-      <HoverImageItem
-        alt={alt}
-        className={cn(aspect == 'lg' && 'aspect-[16/22]', aspect == 'sm' && 'aspect-[1/1]')}
-        src={img}
-      />
+      <HoverImageItem {...props} />
     </HoverImageProvider>
   )
   if (!name) return <ImageEffect />
@@ -27,7 +20,7 @@ export const CardHoverImage = ({ img, alt, aspect = 'md', name, role }: Props) =
       <ImageEffect />
       <div className="mt-6">
         <h3 className="text-xl font-bold">{name}</h3>
-        <p className="opacity-70">{role}</p>
+        <p className="opacity-70">{desc}</p>
       </div>
     </div>
   )
