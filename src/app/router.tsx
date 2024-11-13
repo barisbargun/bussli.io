@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+import { ErrorView } from '@/components/global/error-view'
 import RootLayout from '@/components/layouts/root'
 
 export const createAppRouter = () =>
@@ -7,7 +8,6 @@ export const createAppRouter = () =>
     {
       path: '/',
       element: <RootLayout />,
-
       children: [
         {
           path: '/',
@@ -51,7 +51,8 @@ export const createAppRouter = () =>
             return { Component: NotFoundRoute }
           }
         }
-      ]
+      ],
+      ErrorBoundary: ErrorView
     }
   ])
 
