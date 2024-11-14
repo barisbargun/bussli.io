@@ -16,6 +16,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
 
 import { contactSchema } from '../lib/validations'
+import { Button } from '@/components/ui/button'
 
 type Props = React.HTMLAttributes<HTMLFormElement>
 
@@ -140,9 +141,9 @@ export const ContactForm = ({ className, ...props }: Props) => {
           )}
         />
 
-        <button className="indigoButton w-fit !px-20 !py-3" id="contactFormButton" type="submit">
+        <Button className='px-20' variant="indigo" size='xl' type="submit">
           Send
-        </button>
+        </Button>
       </form>
     </Form>
   )
