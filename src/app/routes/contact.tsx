@@ -16,7 +16,7 @@ export const ContactRoute = () => {
           <PageHeaderHeading>Get in touch</PageHeaderHeading>
         </PageHeader>
         <div className="flex flex-col max-md:flex-col-reverse">
-          <div className="firstContentSpacing mx-auto flex gap-16 max-sm:flex-col sm:justify-center sm:max-lg:flex-wrap lg:w-full lg:justify-between lg:px-4">
+          <div className="page-space mx-auto flex gap-16 max-sm:flex-col sm:justify-center sm:max-lg:flex-wrap lg:w-full lg:justify-between lg:px-4">
             {Object.values(contactConfig).map((v, index) => (
               <ContactInfo {...v} key={index} />
             ))}

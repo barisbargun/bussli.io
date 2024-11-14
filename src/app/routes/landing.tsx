@@ -94,7 +94,7 @@ export const LandingRoute = () => {
             We offer exceptional, needs-based services for our customers.
           </PageHeaderSubHeading>
         </PageHeader>
-        <div className="firstContentSpacing z-10 flex w-full justify-between gap-10 text-white max-lg:flex-wrap max-lg:px-8 max-sm:px-16">
+        <div className="page-space z-10 flex w-full justify-between gap-10 text-white max-lg:flex-wrap max-lg:px-8 max-sm:px-16">
           {servicesConfig.map((card, index) => (
             <motion.div
               key={index}
@@ -178,7 +178,7 @@ export const LandingRoute = () => {
           </div>
         </div>
 
-        <div className="unrelatedContentSpacing flex gap-[4.1rem] px-10 max-sm:flex-col sm:justify-between">
+        <div className="page-space-lg flex gap-[4.1rem] px-10 max-sm:flex-col sm:justify-between">
           {qualitiesConfig.map((v) => (
             <Quality key={v.title} {...v} />
           ))}
@@ -193,14 +193,14 @@ export const LandingRoute = () => {
             People choose us because we serve the best for everyone
           </PageHeaderSubHeading>
         </PageHeader>
-        <div className="firstContentSpacing grid max-w-4xl grid-cols-2 gap-24 max-sm:px-8 lg:gap-20">
+        <div className="page-space grid max-w-4xl grid-cols-2 gap-24 max-sm:px-8 lg:gap-20">
           {featuresConfig.map((v) => (
             <CardBasic {...v} key={v.title} />
           ))}
         </div>
 
         <SquareIcon className="absolute -left-[2.7rem] top-32 h-20 lg:-left-12 lg:top-[10.6rem] lg:h-[6.8rem]" />
-        <Cta className="unrelatedContentSpacing" />
+        <Cta className="page-space-lg" />
       </PageSection>
 
       {/** Studies */}
@@ -224,7 +224,7 @@ export const LandingRoute = () => {
         </div>
 
         <Link
-          className="relatedContentSpacing flex-center relative m-auto gap-2 text-lg font-bold tracking-[-1.2px] text-indigo-600"
+          className="page-space-lg flex-center relative m-auto gap-2 text-lg font-bold tracking-[-1.2px] text-indigo-600"
           to=""
         >
           See all works
@@ -241,14 +241,14 @@ export const LandingRoute = () => {
             Effortlessly create your next landing page with unique, code-free blocks.
           </PageHeaderDescription>
         </PageHeader>
-        <div className="firstContentSpacing z-10 flex gap-12 max-xl:flex-wrap max-xl:sm:justify-center lg:justify-between">
+        <div className="page-space z-10 flex gap-12 max-xl:flex-wrap max-xl:sm:justify-center lg:justify-between">
           {pricingPackagesConfig.map((card, index) => (
             <CardPricing key={index} className="mx-auto" {...card} />
             
           ))}
         </div>
 
-        <div className="relatedContentSpacing flex justify-between gap-10 max-sm:flex-col">
+        <div className="page-space-lg flex justify-between gap-10 max-sm:flex-col">
           {faqsConfig.slice(0, 2).map((v, index) => (
             <Faq key={index} {...v} />
           ))}

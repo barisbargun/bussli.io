@@ -10,7 +10,7 @@ export const Footer = () => {
     <footer className="flex w-full justify-center bg-gray-900 py-[3.75rem] text-white lg:py-[5.625rem]">
       <div className="container">
         <Cta />
-        <div className="relatedContentSpacing flex max-lg:flex-col-reverse max-lg:gap-24">
+        <div className="page-space-lg flex max-lg:flex-col-reverse max-lg:gap-24">
           <div className="lg:max-w-80">
             <h3 className="text-3xl font-bold tracking-tight">{baseConfig.logo.name}</h3>
             <p className="mb-12 mt-8 font-light leading-7 opacity-70">

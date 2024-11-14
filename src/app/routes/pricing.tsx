@@ -41,7 +41,7 @@ export const PricingRoute = () => {
         </PageHeader>
         <Toggle
           checked={checked}
-          className="firstContentSpacing"
+          className="page-space"
           discount={PRICING_PACKAGE_DISCOUNT}
           setChecked={setChecked}
         />
@@ -62,7 +62,7 @@ export const PricingRoute = () => {
             />
           ))}
         </ul>
-        <CompanyLogos className="unrelatedContentSpacing w-full" />
+        <CompanyLogos className="page-space-lg w-full" />
       </PageSection>
 
       {/** Compare plans */}
@@ -70,7 +70,7 @@ export const PricingRoute = () => {
         <PageHeader center>
           <PageHeaderSubHeading>Compare plans & features</PageHeaderSubHeading>
         </PageHeader>
-        <article className="firstContentSpacing flex w-full flex-col gap-10 overflow-hidden max-lg:!overflow-x-scroll max-lg:pb-4 lg:gap-7">
+        <article className="page-space flex w-full flex-col gap-10 overflow-hidden max-lg:!overflow-x-scroll max-lg:pb-4 lg:gap-7">
           <ComparePricing
             b={Object.keys(PRICING_PACKAGES)[0]}
             f="Features"
@@ -96,7 +96,7 @@ export const PricingRoute = () => {
         </PageHeader>
         <Accordion
           collapsible
-          className="firstContentSpacing flex flex-col gap-3"
+          className="page-space flex flex-col gap-3"
           defaultValue="0"
           type="single"
         >

@@ -20,7 +20,7 @@ export const TermsRoute = () => {
             and conditions.
           </PageHeaderDescription>
         </PageHeader>
-        <article className="firstContentSpacing prose max-w-full">
+        <article className="page-space prose max-w-full">
           <p>
             By accessing and placing an order with Bussli, you agree to the terms and conditions in
             the Terms of Use below. These terms apply to the entire website and any communication

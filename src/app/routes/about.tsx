@@ -32,13 +32,13 @@ export const AboutRoute = () => {
         </PageHeader>
         <img
           alt="team-img"
-          className="firstContentSpacing w-full rounded-xl"
+          className="page-space w-full rounded-xl"
           src={assets.images.other.team}
           width={930}
           height={453}
           {...{ fetchpriority: "high" } as any}
         />
-        <div className="relatedContentSpacing flex justify-between gap-5 max-sm:flex-col sm:gap-20">
+        <div className="page-space-lg flex justify-between gap-5 max-sm:flex-col sm:gap-20">
           <h2 className="text-4xl font-bold tracking-tight sm:flex-[0_0_45%]">
             We are here to help customers achieve success.
           </h2>
@@ -71,7 +71,7 @@ export const AboutRoute = () => {
             of our tools!
           </PageHeaderDescription>
         </PageHeader>
-        <div className="max-lg:firstContentSpacing flex w-full gap-6 sm:w-[70vw] md:w-[25rem] xl:w-[29rem]">
+        <div className="max-lg:page-space flex w-full gap-6 sm:w-[70vw] md:w-[25rem] xl:w-[29rem]">
           <div className="flex h-full w-1/2 flex-col gap-6">
             {skilledPeople.slice(0, 2).map((source, index) => (
               <CardHoverImage
@@ -106,7 +106,7 @@ export const AboutRoute = () => {
             tools!
           </PageHeaderDescription>
         </PageHeader>
-        <div className="firstContentSpacing grid grid-cols-2 gap-x-8 gap-y-16 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="page-space grid grid-cols-2 gap-x-8 gap-y-16 sm:grid-cols-3 lg:grid-cols-4">
           {teamConfig.map((v, index) => (
             <CardHoverImage
               key={v.name}
