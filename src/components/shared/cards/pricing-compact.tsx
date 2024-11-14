@@ -26,6 +26,7 @@ export const CardPricingCompact = ({
   isCreditCardRequire,
   to,
   type,
+  className,
   ...props
 }: Props) => {
   return (
@@ -34,7 +35,7 @@ export const CardPricingCompact = ({
       className={cn(
         'flex flex-col gap-8 rounded-2xl border-[3px] border-indigo-600 px-10 py-7 max-lg:max-w-[30rem] max-lg:basis-full lg:flex-1 lg:gap-6 lg:rounded-xl xl:px-12 xl:py-9',
         fillColor && 'bg-indigo-600 text-white',
-        props.className
+        className
       )}
     >
       <h3 className="text-sm font-bold uppercase tracking-widest">{type}</h3>

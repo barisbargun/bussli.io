@@ -14,12 +14,18 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 const titleColors = ['text-emerald-600', 'text-red-600', 'text-indigo-600']
-export const ComparePricing = ({ f, tip, b, s, p, isTitle = false, ...props }: Props) => {
+export const ComparePricing = ({
+  f,
+  tip,
+  b,
+  s,
+  p,
+  isTitle = false,
+  className,
+  ...props
+}: Props) => {
   return (
-    <div
-      {...props}
-      className={cn('flex max-sm:w-[120vw]', isTitle && 'mb-5 lg:mb-3', props.className)}
-    >
+    <div {...props} className={cn('flex max-sm:w-[120vw]', isTitle && 'mb-5 lg:mb-3', className)}>
       <div className="flex flex-[0_0_48%] items-center gap-1.5 xl:flex-[0_0_52%]">
         <p className={cn('capitalize', isTitle ? 'text-xl font-bold' : 'font-medium')}>{f}</p>
         {!isTitle && (

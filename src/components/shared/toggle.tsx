@@ -9,9 +9,9 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {
   setChecked: (v: boolean) => void
 }
 
-export const Toggle = ({ checked, setChecked, discount, ...props }: Props) => {
+export const Toggle = ({ checked, setChecked, discount,className, ...props }: Props) => {
   return (
-    <div {...props} className={cn('flex-center gap-4 text-lg', props.className)}>
+    <div {...props} className={cn('flex-center gap-4 text-lg', className)}>
       <p>Monthly</p>
       <Switch checked={checked} onCheckedChange={setChecked} />
       <p>Yearly</p>
