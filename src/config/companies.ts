@@ -11,27 +11,19 @@ export const companiesConfig: CompanyConfig = {
   companies: [
     {
       icon: assets.svg.icons.company.company,
-      title: 'Company name'
+      title: 'Company'
     },
     {
       icon: assets.svg.icons.company.company,
-      title: 'Company name2'
+      title: 'Company2'
     },
     {
       icon: assets.svg.icons.company.company,
-      title: 'Company name3'
+      title: 'Company3'
     },
     {
       icon: assets.svg.icons.company.company,
-      title: 'Company name4'
-    },
-    {
-      icon: assets.svg.icons.company.company,
-      title: 'Company name5'
-    },
-    {
-      icon: assets.svg.icons.company.company,
-      title: 'Company name6'
+      title: 'Company4'
     }
   ]
 }
