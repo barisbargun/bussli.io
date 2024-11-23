@@ -6,11 +6,11 @@
 
 @layer base {
   * {
-    @apply m-0 box-border p-0 font-montserrat ;
+    @apply m-0 box-border p-0 font-montserrat;
   }
 
   html {
-    @apply scroll-smooth antialiased text-[16px];
+    @apply scroll-smooth text-[16px] antialiased;
   }
 
   #root {
@@ -21,37 +21,45 @@
     @apply resize-none;
   }
 
-  .flex-center {
-    @apply flex items-center justify-center;
+  .container {
+    @apply max-sm:!px-4;
   }
 }
 
 @layer components {
   .navActive::after {
     content: '';
-    @apply absolute -bottom-1 left-0 h-0.5 w-full rounded-lg bg-indigo-600;
+    @apply absolute -bottom-1 left-0 h-0.5 w-full rounded-lg bg-primary;
   }
 }
 
-/* PAGE SPACE */
+/* SPACES */
 @layer utilities {
-  .page-space {
-    @apply mt-[2rem] lg:mt-[3.75rem];
+  .content-space {
+    @apply mt-8 xl:mt-14;
   }
 
-  .page-space-lg {
-    @apply mt-[4rem] lg:mt-[7rem];
+  .content-space-lg {
+    @apply mt-16 xl:mt-28;
+  }
+
+  .page-space-main-first {
+    @apply pt-28 lg:pt-32 xl:pt-44;
+  }
+
+  .page-space-first {
+    @apply pb-24 pt-28 lg:pb-20 lg:pt-32 xl:pb-24 xl:pt-36;
+  }
+
+  .page-space {
+    @apply pb-12 pt-8 lg:pb-16 lg:pt-10 xl:pb-24 xl:pt-14;
   }
 }
-
 
 /* GRADIENTS */
 @layer utilities {
   .pageGradient {
-    background: var(
-      --bg-linear-1,
-      linear-gradient(135deg, #fff 8.63%, #eef2ff 90.45%)
-    );
+    background: var(--bg-linear-1, linear-gradient(135deg, #fff 8.63%, #eef2ff 90.45%));
   }
 
   .rectangleGradient {
@@ -62,5 +70,14 @@
     );
 
     background-blend-mode: plus-lighter;
+  }
+}
+
+/* COLORS */
+@layer base {
+  :root {
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --muted-foreground-2: 0 0% 83.1%;
   }
 }

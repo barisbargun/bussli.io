@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { indigo } from 'tailwindcss/colors'
 
 const config = {
   darkMode: ['class'],
@@ -18,6 +19,14 @@ const config = {
       }
     },
     extend: {
+      colors: {
+        primary: { ...indigo, DEFAULT: indigo[600] },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+          'foreground-2': 'hsl(var(--muted-foreground-2))'
+        }
+      },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         spaceGrotesk: ['Space Grotesk', 'sans-serif'],
@@ -39,7 +48,18 @@ const config = {
       }
     }
   },
-  plugins: [require('@tailwindcss/typography')]
+  plugins: [
+    require('@tailwindcss/typography'),
+    ({ addUtilities }) => {
+      addUtilities({
+        '.flex-center': { '@apply flex items-center justify-center': {} },
+
+        /* PAGE SPACE */
+        '.content-space': { '@apply mt-[2rem] lg:mt-[3.75rem]': {} },
+        '.content-space-lg': { '@apply mt-[4rem] lg:mt-[7rem]': {} }
+      })
+    }
+  ]
 } satisfies Config
 
 export default config
