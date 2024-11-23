@@ -2,6 +2,8 @@ import { HTMLMotionProps, motion } from 'framer-motion'
 
 import { cn } from '@/lib/utils'
 
+import { H1, H2, P } from '../ui/typography'
+
 type PageHeaderProps = HTMLMotionProps<'section'> & {
   center?: boolean
 }
@@ -25,7 +27,7 @@ function PageHeaderNav({ className, children, ...props }: React.HTMLAttributes<H
   return (
     <strong
       className={cn(
-        'mb-[10px] text-sm font-semibold uppercase tracking-[1.2px] text-rose-500 lg:mb-4',
+        'mb-2.5 text-sm font-semibold uppercase tracking-widest text-rose-500 lg:mb-4',
         className
       )}
       {...props}
@@ -36,43 +38,18 @@ function PageHeaderNav({ className, children, ...props }: React.HTMLAttributes<H
 }
 
 function PageHeaderHeading({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-  return (
-    <h1
-      className={cn('text-7xl font-bold !leading-[105%] tracking-[-2px] lg:text-6xl', className)}
-      {...props}
-    />
-  )
+  return <H1 className={cn('sm:max-lg:text-7xl', className)} {...props} />
 }
 
 function PageHeaderSubHeading({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-  return (
-    <h2 className={cn('text-4xl font-bold tracking-[-1.2px] lg:text-4xl', className)} {...props} />
-  )
+  return <H2 className={className} {...props} />
 }
 
-function PageHeaderDescription({ className, ...props }: HTMLMotionProps<'p'>) {
-  return (
-    <motion.p
-      className={cn('mt-[10px] text-xl leading-[150%] opacity-70 lg:mt-4 lg:text-xl', className)}
-      {...props}
-    />
-  )
+function PageHeaderDescription({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) {
+  return <P className={cn('text-muted-foreground sm:max-lg:text-lg', className)} {...props} />
 }
 
-function PageHeaderActions({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div
-      className={cn('flex w-full items-center justify-start gap-2 py-2', className)}
-      {...props}
-    />
-  )
-}
-
-export {
-  PageHeader,
-  PageHeaderActions,
-  PageHeaderDescription,
-  PageHeaderHeading,
-  PageHeaderNav,
-  PageHeaderSubHeading
-}
+export { PageHeader, PageHeaderDescription, PageHeaderHeading, PageHeaderNav, PageHeaderSubHeading }

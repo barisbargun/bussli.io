@@ -13,7 +13,7 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {
   side?: 'top' | 'right' | 'bottom' | 'left'
 }
 
-export const Tooltip = ({ trigger, children, side = 'bottom',className, ...props }: Props) => {
+export const Tooltip = ({ trigger, children, side = 'bottom', className, ...props }: Props) => {
   return (
     <TooltipProvider delayDuration={200}>
       <HybridTooltip>

@@ -17,14 +17,14 @@ import { RectangleIcon } from '@/components/icons/rectangle'
 import { SquareIcon } from '@/components/icons/square'
 import { ButtonGetStarted } from '@/components/shared/buttons/get-started'
 import { CardBasic } from '@/components/shared/cards/basic'
+import { CardPricing } from '@/components/shared/cards/pricing'
 import { CardService } from '@/components/shared/cards/service'
 import { CompanyLogos } from '@/components/shared/companies'
 import { Faq } from '@/components/shared/faq'
 import { HoverEffect } from '@/components/shared/hover-effect'
 import { Product } from '@/components/shared/product'
-import { Quality } from '@/components/shared/quality'
 import { Testimonial, TestimonialProvider } from '@/components/shared/testimonial'
-
+import { Large } from '@/components/ui/typography'
 import { assets } from '@/config/assets'
 import { faqsConfig } from '@/config/features/faqs'
 import { featuresConfig } from '@/config/features/features'
@@ -35,7 +35,6 @@ import { servicesConfig } from '@/config/features/services'
 import { testimonialsConfig } from '@/config/features/testimonials'
 import { motions } from '@/lib/motions'
 import { cn } from '@/lib/utils'
-import { CardPricing } from '@/components/shared/cards/pricing'
 
 export const LandingRoute = () => {
   return (
@@ -45,12 +44,12 @@ export const LandingRoute = () => {
       {/** Main */}
       <PageSection
         className="pageGradient"
-        nestedClassName="min-h-screen"
+        nestedClassName="min-h-[clamp(6.25rem,100vh,75rem)]"
         spaceType="MainFirstPage"
       >
         <div className="flex justify-between gap-5">
           <motion.div
-            className="flex w-full flex-col gap-7 md:max-w-[33.8rem]"
+            className="flex w-full flex-col gap-7 lg:max-w-80 xl:max-w-[33.8rem]"
             variants={motions.fadeIn({ direction: 'left' })}
           >
             <PageHeader>
@@ -64,7 +63,7 @@ export const LandingRoute = () => {
           </motion.div>
 
           <motion.div
-            className="relative size-80 max-md:hidden xl:size-[22.65rem]"
+            className="relative size-64 max-lg:hidden xl:size-72 2xl:size-80"
             variants={motions.fadeIn({ direction: 'right' })}
           >
             <img
@@ -73,7 +72,7 @@ export const LandingRoute = () => {
               src={assets.images.other.heroOvalFemale}
               width={420}
               height={420}
-              {...{ fetchpriority: "high" } as any}
+              {...({ fetchpriority: 'high' } as any)}
             />
             <OctagonIcon
               className={cn(
@@ -83,7 +82,7 @@ export const LandingRoute = () => {
           </motion.div>
         </div>
 
-        <CompanyLogos className="mb-20 mt-auto" />
+        <CompanyLogos className="mb-10 mt-auto 2xl:mb-20" />
       </PageSection>
 
       {/** Services */}
@@ -94,7 +93,7 @@ export const LandingRoute = () => {
             We offer exceptional, needs-based services for our customers.
           </PageHeaderSubHeading>
         </PageHeader>
-        <div className="page-space z-10 flex w-full justify-between gap-10 text-white max-lg:flex-wrap max-lg:px-8 max-sm:px-16">
+        <div className="z-10 flex w-full justify-between gap-10 text-white content-space max-lg:flex-wrap">
           {servicesConfig.map((card, index) => (
             <motion.div
               key={index}
@@ -105,6 +104,7 @@ export const LandingRoute = () => {
                 directionAmount: 100,
                 delay: 0.4
               })}
+              className="mx-auto max-lg:max-w-sm"
             >
               <CardService
                 key={card.title}
@@ -113,7 +113,7 @@ export const LandingRoute = () => {
                     alt="illustration"
                     width={200}
                     height={128}
-                    className="h-32"
+                    className="h-20 xl:h-32"
                     src={card.illustration}
                     loading="lazy"
                   />
@@ -123,8 +123,8 @@ export const LandingRoute = () => {
             </motion.div>
           ))}
         </div>
-        <div className="relative mb-[4.6rem]">
-          <RectangleIcon className="absolute -bottom-[4.6rem] right-0 w-[19.6rem] lg:-right-6 xl:-right-10" />
+        <div className="relative mb-10 xl:mb-[4.6rem]">
+          <RectangleIcon className="absolute -bottom-12 right-0 w-60 lg:-right-6 xl:-bottom-[4.6rem] xl:-right-10 xl:w-80" />
         </div>
       </PageSection>
 
@@ -139,8 +139,8 @@ export const LandingRoute = () => {
 
       {/** Stories */}
       <PageSection>
-        <div className="flex justify-between gap-20 lg:gap-48 xl:gap-64">
-          <div className="relative max-lg:flex-[0_0_43%] lg:flex-[0_0_42%] xl:flex-[0_0_38%]">
+        <div className="flex justify-between gap-10 max-sm:flex-col sm:gap-2 lg:gap-48 xl:gap-64">
+          <div className="relative flex-[0_0_43%] lg:flex-[0_0_42%] xl:flex-[0_0_38%]">
             <PageHeader variants={motions.fadeIn({})}>
               <PageHeaderNav>Our Story</PageHeaderNav>
               <PageHeaderSubHeading>
@@ -149,7 +149,7 @@ export const LandingRoute = () => {
             </PageHeader>
             <img
               alt="female-img"
-              className="relative z-10 mt-8 w-full sm:mt-16"
+              className="relative z-10 mt-8 w-8/12 lg:w-11/12 xl:w-full"
               loading="lazy"
               src={assets.images.other.darkHairFemale}
               width={425}
@@ -157,30 +157,33 @@ export const LandingRoute = () => {
             />
 
             <OctagonIcon
-              className="absolute -bottom-10 size-36 max-lg:hidden lg:-left-6 xl:-left-10"
+              className="absolute -bottom-10 -left-4 size-28 xl:-left-10 xl:size-36"
               fill="#047857"
             />
           </div>
 
-          <div className="relative max-lg:flex-auto">
+          <div className="relative">
             <img
               alt="male-img"
-              className=""
+              className="ml-auto w-8/12 lg:w-11/12 xl:w-full"
               loading="lazy"
               src={assets.images.other.orangeBgMale}
               width={470}
               height={597}
             />
-            <p className="pageDesc absolute max-sm:pt-12 sm:pt-7 lg:-left-[7.1rem]">
+            <p className="pageDesc mt-7 italic max-lg:text-center lg:absolute lg:-left-28">
               We share trends and strategies to boost your rental income and ensure high demand.
               Easily create a landing page with unique, code-free blocks.
             </p>
           </div>
         </div>
 
-        <div className="page-space-lg flex gap-[4.1rem] px-10 max-sm:flex-col sm:justify-between">
+        <div className="flex gap-[4.1rem] px-10 content-space-lg max-sm:flex-col sm:justify-between">
           {qualitiesConfig.map((v) => (
-            <Quality key={v.title} {...v} />
+            <div className="flex flex-col items-center gap-4 text-center" key={v.title}>
+              <h3 className="text-4xl font-bold tracking-tighter xl:text-5xl">{v.title}</h3>
+              <Large className="font-medium text-muted-foreground">{v.desc}</Large>
+            </div>
           ))}
         </div>
       </PageSection>
@@ -193,14 +196,18 @@ export const LandingRoute = () => {
             People choose us because we serve the best for everyone
           </PageHeaderSubHeading>
         </PageHeader>
-        <div className="page-space grid max-w-4xl grid-cols-2 gap-24 max-sm:px-8 lg:gap-20">
+        <div className="grid max-w-3xl grid-cols-1 gap-12 content-space max-lg:text-center max-sm:px-8 sm:grid-cols-2 lg:gap-20 xl:max-w-4xl">
           {featuresConfig.map((v) => (
-            <CardBasic {...v} key={v.title} />
+            <CardBasic
+              {...v}
+              key={v.title}
+              className="max-lg:flex max-lg:flex-col max-lg:items-center"
+            />
           ))}
         </div>
 
-        <SquareIcon className="absolute -left-[2.7rem] top-32 h-20 lg:-left-12 lg:top-[10.6rem] lg:h-[6.8rem]" />
-        <Cta className="page-space-lg" />
+        <SquareIcon className="absolute -left-11 top-48 h-16 lg:-left-12 lg:top-44 lg:h-28" />
+        <Cta className="content-space-lg" />
       </PageSection>
 
       {/** Studies */}
@@ -211,44 +218,42 @@ export const LandingRoute = () => {
             Our work showcases why we&apos;re the best in the business
           </PageHeaderSubHeading>
         </PageHeader>
-        <div className="mt-[3.1rem] flex justify-between gap-[5.6rem]">
-          <div className="flex flex-1 flex-col gap-14 lg:gap-[3.75rem]">
+        <div className="mt-12 flex justify-between gap-8 max-sm:flex-col sm:gap-14 xl:gap-24">
+          <div className="flex flex-1 flex-col gap-8 sm:gap-14 lg:gap-14">
             <Product {...productsConfig[0]} size="long" />
             <Product {...productsConfig[1]} />
           </div>
-          <div className="flex flex-1 flex-col gap-14 lg:gap-[3.75rem]">
+          <div className="flex flex-1 flex-col gap-14 lg:gap-14">
             <Product {...productsConfig[2]} />
-
             <Product {...productsConfig[3]} size="long" />
           </div>
         </div>
 
         <Link
-          className="page-space-lg flex-center relative m-auto gap-2 text-lg font-bold tracking-[-1.2px] text-indigo-600"
+          className="relative m-auto gap-2 tracking-tighter text-primary flex-center content-space-lg"
           to=""
         >
-          See all works
+          <Large>See all works</Large>
           <ArrowRightIcon className="size-5" />
           <HoverEffect light={false} />
         </Link>
       </PageSection>
 
       {/** Pricing */}
-      <PageSection className="bg-indigo-600">
+      <PageSection className="bg-primary">
         <PageHeader center className="text-white" variants={motions.fadeIn({})}>
           <PageHeaderSubHeading>Pricing & Plans</PageHeaderSubHeading>
-          <PageHeaderDescription>
+          <PageHeaderDescription className="text-muted-foreground-2">
             Effortlessly create your next landing page with unique, code-free blocks.
           </PageHeaderDescription>
         </PageHeader>
-        <div className="page-space z-10 flex gap-12 max-xl:flex-wrap max-xl:sm:justify-center lg:justify-between">
+        <div className="z-10 flex gap-12 content-space max-lg:flex-col max-lg:sm:justify-center lg:justify-between">
           {pricingPackagesConfig.map((card, index) => (
             <CardPricing key={index} className="mx-auto" {...card} />
-            
           ))}
         </div>
 
-        <div className="page-space-lg flex justify-between gap-10 max-sm:flex-col">
+        <div className="flex items-center justify-between gap-10 content-space-lg max-lg:flex-col">
           {faqsConfig.slice(0, 2).map((v, index) => (
             <Faq key={index} {...v} />
           ))}

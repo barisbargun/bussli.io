@@ -5,6 +5,7 @@ import {
   PageHeaderHeading
 } from '@/components/global/page-header'
 import { PageSection } from '@/components/global/page-section'
+import { H3, P, Ul } from '@/components/ui/typography'
 
 export const TermsRoute = () => {
   return (
@@ -20,8 +21,8 @@ export const TermsRoute = () => {
             and conditions.
           </PageHeaderDescription>
         </PageHeader>
-        <article className="page-space prose max-w-full">
-          <p>
+        <article className="content-space [&>h2]:mt-10">
+          <P>
             By accessing and placing an order with Bussli, you agree to the terms and conditions in
             the Terms of Use below. These terms apply to the entire website and any communication
             between you and Bussli. Bussli is not liable for any direct, indirect, special,
@@ -30,16 +31,16 @@ export const TermsRoute = () => {
             using materials from this site results in the need for servicing, repair, or correction
             of equipment or data, you assume any associated costs. Bussli is not responsible for any
             outcomes from using our resources.
-          </p>
+          </P>
 
-          <h2>License</h2>
-          <p>
+          <H3 as="h2">License</H3>
+          <P>
             By purchasing or downloading resource (“item” or “file”) you are being granted a license
             to use these files for specific uses under certain conditions.
-          </p>
+          </P>
 
-          <h2>Security</h2>
-          <ul>
+          <H3 as="h2">Security</H3>
+          <Ul>
             <li>
               You have rights for royalty free use of our resources for any or all of your personal.
             </li>
@@ -48,24 +49,24 @@ export const TermsRoute = () => {
               We reserve the rights to change prices and revise the resources usage policy in any
               moment.
             </li>
-          </ul>
+          </Ul>
 
-          <h2>Embedded content from other websites</h2>
-          <p>
+          <H3 as="h2">Embedded content from other websites</H3>
+          <P>
             Articles on this site may contain embedded content such as videos, images, and articles.
             This embedded content functions just as it would if you visited the originating website.
-          </p>
-          <p>
+          </P>
+          <P>
             These external sites might collect your data, use cookies, integrate additional
             third-party tracking, and monitor your interaction with the embedded content, especially
             if you are logged into those sites.
-          </p>
+          </P>
 
-          <h2>Changes about terms</h2>
-          <p>
+          <H3 as="h2">Changes about terms</H3>
+          <P>
             If we change our terms of use, we will post those changes on this page. Registered users
             will receive an email outlining the changes.
-          </p>
+          </P>
         </article>
       </PageSection>
     </>

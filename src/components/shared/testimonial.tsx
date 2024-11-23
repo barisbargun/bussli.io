@@ -10,6 +10,9 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel'
+import { cn } from '@/lib/utils'
+
+import { H3 } from '../ui/typography'
 
 const TestimonialProvider = ({ children }: { children: React.ReactNode }) => {
   const [api, setApi] = useState<CarouselApi>()
@@ -41,17 +44,12 @@ const TestimonialProvider = ({ children }: { children: React.ReactNode }) => {
       ]}
       setApi={setApi}
     >
-      <CarouselContent>
-        {children}
-        {/* {config.map((v, i) => (
-            <Testimonial {...v} key={i} />
-          ))} */}
-      </CarouselContent>
-      <div className="flex-center absolute -top-12 left-0 gap-3 max-lg:hidden">
+      <CarouselContent>{children}</CarouselContent>
+      <div className="absolute -top-12 left-0 gap-3 flex-center max-lg:hidden">
         <CarouselPrevious className="static translate-y-0" />
         <CarouselNext className="static translate-y-0" />
       </div>
-      <div className="absolute -bottom-16 w-full text-center font-poppins text-xs opacity-30 lg:-bottom-12 lg:text-sm">
+      <div className="absolute -bottom-12 w-full text-center font-poppins text-sm opacity-30 max-lg:hidden">
         Slide {current} of {count}
       </div>
     </Carousel>
@@ -71,28 +69,37 @@ const Testimonial = ({
   job: string
   img: string
 }) => {
+  const Image = ({ size = 'base' }: { size?: 'base' | 'sm' }) => (
+    <img
+      width={150}
+      height={150}
+      alt="user-img"
+      className={cn('rounded-full', size === 'sm' ? 'size-12 lg:hidden' : 'size-36 max-lg:hidden')}
+      loading="lazy"
+      src={img}
+    />
+  )
+
   return (
     <CarouselItem className="flex-center">
-      <div className="flex-center max-w-[80%] gap-10">
-        <img
-          width={150}
-          height={150}
-          alt="user-img"
-          className="size-[9.3rem] rounded-full"
-          loading="lazy"
-          src={img}
-        />
+      <div className="max-w-[80%] gap-10 flex-center">
+        <Image />
         <div className="flex flex-col">
           <div className="flex gap-1">
             {[...Array.from({ length: stars }).keys()].map((_, index) => (
               <StarFilledIcon key={index} className="size-5 text-amber-400" />
             ))}
           </div>
-          <h3 className="mt-4 line-clamp-6 font-poppins text-2xl font-bold leading-8 tracking-[-0.0125rem]">
+          <H3 className="mt-4 line-clamp-6 font-poppins tracking-[-0.0125rem] max-xl:text-xl">
             &quot;{title}&quot;
-          </h3>
-          <h4 className="mt-4 font-poppins font-bold">{user}</h4>
-          <p className="font-poppins text-xs opacity-70">{job}</p>
+          </H3>
+          <div className="mt-4 flex items-center gap-4">
+            <Image size="sm" />
+            <div className="inline">
+              <h4 className="font-poppins font-bold">{user}</h4>
+              <p className="font-poppins text-xs opacity-70">{job}</p>
+            </div>
+          </div>
         </div>
       </div>
     </CarouselItem>

@@ -1,3 +1,4 @@
+import { H4, P } from '@/components/ui/typography'
 import { FeaturesConfig } from '@/config/features/features'
 import { cn } from '@/lib/utils'
 
@@ -9,9 +10,9 @@ export const CardBasic = ({ title, desc, icon, iconColor, className, ...props }:
       <div className={cn('box-content h-fit w-8 rounded-2xl p-4 lg:w-20 lg:p-5', iconColor)}>
         <img width={40} height={40} alt="icon" className="size-full" loading="lazy" src={icon} />
       </div>
-      <div className="flex flex-col gap-2">
-        <h3 className="text-2xl font-bold tracking-[-0.5px] lg:text-xl">{title}</h3>
-        <p className="text-xl leading-7 opacity-70 lg:text-lg">{desc}</p>
+      <div className="flex flex-col">
+        <H4 as="h3">{title}</H4>
+        <P className="opacity-70">{desc}</P>
       </div>
     </div>
   )

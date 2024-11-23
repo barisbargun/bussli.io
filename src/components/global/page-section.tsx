@@ -9,12 +9,6 @@ type Props = HTMLMotionProps<'section'> & {
   children?: React.ReactNode
 }
 
-const paddingClasses = {
-  MainFirstPage: 'pt-[9rem] xl:pt-[11.25rem]',
-  FirstPage: 'pb-[6rem] pt-[9rem] xl:pt-[9.375rem]',
-  Page: 'pb-[6rem] pt-[3.75rem]'
-}
-
 export const PageSection = ({
   spaceType = 'Page',
   nestedClassName,
@@ -41,7 +35,11 @@ export const PageSection = ({
       <div
         className={cn(
           'container mx-auto flex flex-col',
-          paddingClasses[spaceType],
+          spaceType == 'MainFirstPage'
+            ? 'page-space-main-first'
+            : spaceType == 'FirstPage'
+              ? 'page-space-first'
+              : 'page-space',
           nestedClassName
         )}
       >

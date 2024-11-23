@@ -1,6 +1,3 @@
-import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
-
 import { Helmet } from '@/components/global/helmet'
 import {
   PageHeader,
@@ -9,8 +6,9 @@ import {
   PageHeaderSubHeading
 } from '@/components/global/page-header'
 import { PageSection } from '@/components/global/page-section'
+import { ArrowLink } from '@/components/shared/buttons/arrow-link'
 import { CardHoverImage } from '@/components/shared/cards/hover-image'
-import { HoverEffect } from '@/components/shared/hover-effect'
+import { H2, P } from '@/components/ui/typography'
 import { assets } from '@/config/assets'
 import { teamConfig } from '@/config/features/team'
 
@@ -32,25 +30,25 @@ export const AboutRoute = () => {
         </PageHeader>
         <img
           alt="team-img"
-          className="page-space w-full rounded-xl"
+          className="w-full rounded-xl content-space"
           src={assets.images.other.team}
           width={930}
           height={453}
-          {...{ fetchpriority: "high" } as any}
+          {...({ fetchpriority: 'high' } as any)}
         />
-        <div className="page-space-lg flex justify-between gap-5 max-sm:flex-col sm:gap-20">
-          <h2 className="text-4xl font-bold tracking-tight sm:flex-[0_0_45%]">
+        <div className="flex justify-between gap-5 content-space-lg max-lg:flex-col lg:gap-20">
+          <H2 className="max-sm:text-2xl sm:flex-[0_0_45%]">
             We are here to help customers achieve success.
-          </h2>
-          <div className="flex flex-auto flex-col gap-6 *:text-lg *:leading-8 *:opacity-70">
-            <p>
+          </H2>
+          <div className="flex flex-auto flex-col gap-4 *:text-muted-foreground sm:*:text-lg">
+            <P>
               We share trends and strategies to boost your rental income and keep you in high
               demand.
-            </p>
-            <p>
+            </P>
+            <P>
               We share trends and strategies to boost your rental income and keep you in high
               demand.
-            </p>
+            </P>
           </div>
         </div>
       </PageSection>
@@ -58,20 +56,20 @@ export const AboutRoute = () => {
       {/** Skilled coders */}
       <PageSection
         className="pageGradient"
-        nestedClassName="items-center justify-between md:flex-row"
+        nestedClassName="items-center justify-between lg:flex-row"
       >
-        <PageHeader className="max-md:mx-auto max-md:text-center md:max-w-xl">
+        <PageHeader className="max-lg:text-center max-md:mx-auto lg:max-w-sm xl:max-w-lg">
           <PageHeaderSubHeading>High skilled coders from worldwide.</PageHeaderSubHeading>
           <PageHeaderDescription>
             We share trends and strategies to boost your rental income and keep you in high demand.
-          </PageHeaderDescription>
-          <PageHeaderDescription>
+            <br />
+            <br />
             Get started with Bussli.io - Web development app today and experience the power of our
             tools! Get started with Bussli.io - Web development app today and experience the power
             of our tools!
           </PageHeaderDescription>
         </PageHeader>
-        <div className="max-lg:page-space flex w-full gap-6 sm:w-[70vw] md:w-[25rem] xl:w-[29rem]">
+        <div className="flex w-full gap-6 max-lg:content-space sm:w-[70vw] lg:w-[25rem] xl:w-[29rem]">
           <div className="flex h-full w-1/2 flex-col gap-6">
             {skilledPeople.slice(0, 2).map((source, index) => (
               <CardHoverImage
@@ -106,7 +104,7 @@ export const AboutRoute = () => {
             tools!
           </PageHeaderDescription>
         </PageHeader>
-        <div className="page-space grid grid-cols-2 gap-x-8 gap-y-16 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-16 content-space sm:grid-cols-3 lg:grid-cols-4">
           {teamConfig.map((v, index) => (
             <CardHoverImage
               key={v.name}
@@ -117,12 +115,8 @@ export const AboutRoute = () => {
               {...v}
             />
           ))}
-          <div className="flex-center size-full">
-            <Link className="flex-center relative gap-3 text-xl font-bold text-indigo-600" to="#">
-              Join us
-              <ArrowRight />
-              <HoverEffect light={false} />
-            </Link>
+          <div className="size-full flex-center">
+            <ArrowLink title="Join Us" to="#" />
           </div>
         </div>
       </PageSection>

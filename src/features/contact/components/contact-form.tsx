@@ -3,6 +3,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
+import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
@@ -16,7 +17,6 @@ import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
 
 import { contactSchema } from '../lib/validations'
-import { Button } from '@/components/ui/button'
 
 type Props = React.HTMLAttributes<HTMLFormElement>
 
@@ -141,7 +141,7 @@ export const ContactForm = ({ className, ...props }: Props) => {
           )}
         />
 
-        <Button className='px-20' variant="indigo" size='xl' type="submit">
+        <Button className="px-20" variant="primary" size="xl" type="submit">
           Send
         </Button>
       </form>

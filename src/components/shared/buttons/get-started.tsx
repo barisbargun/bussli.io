@@ -10,7 +10,7 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
 export const ButtonGetStarted = ({ children, className, ...props }: Props) => {
   return (
     <Link className="w-fit" to="/contact">
-      <Button className={cn('text-nowrap', className)} variant="indigo" size="xl" {...props}>
+      <Button className={cn('text-nowrap', className)} variant="primary" size="xl" {...props}>
         {children ?? 'Get Started'}
       </Button>
     </Link>

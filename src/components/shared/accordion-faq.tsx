@@ -14,7 +14,7 @@ export const AccordionFaq = ({ q, a, index, className, ...props }: Props) => {
       className={cn('rounded-xl border border-gray-200 px-6 py-2', className)}
       value={index + ''}
     >
-      <AccordionTrigger className="text-xl font-bold">{q}</AccordionTrigger>
+      <AccordionTrigger className="font-bold sm:text-xl">{q}</AccordionTrigger>
       <AccordionContent className="opacity-70">{a}</AccordionContent>
     </AccordionItem>
   )

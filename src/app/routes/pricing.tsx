@@ -41,7 +41,7 @@ export const PricingRoute = () => {
         </PageHeader>
         <Toggle
           checked={checked}
-          className="page-space"
+          className="content-space"
           discount={PRICING_PACKAGE_DISCOUNT}
           setChecked={setChecked}
         />
@@ -62,7 +62,7 @@ export const PricingRoute = () => {
             />
           ))}
         </ul>
-        <CompanyLogos className="page-space-lg w-full" />
+        <CompanyLogos className="w-full content-space-lg" />
       </PageSection>
 
       {/** Compare plans */}
@@ -70,7 +70,7 @@ export const PricingRoute = () => {
         <PageHeader center>
           <PageHeaderSubHeading>Compare plans & features</PageHeaderSubHeading>
         </PageHeader>
-        <article className="page-space flex w-full flex-col gap-10 overflow-hidden max-lg:!overflow-x-scroll max-lg:pb-4 lg:gap-7">
+        <article className="flex w-full flex-col gap-10 overflow-hidden content-space max-lg:!overflow-x-scroll max-lg:pb-4 lg:gap-7">
           <ComparePricing
             b={Object.keys(PRICING_PACKAGES)[0]}
             f="Features"
@@ -96,7 +96,7 @@ export const PricingRoute = () => {
         </PageHeader>
         <Accordion
           collapsible
-          className="page-space flex flex-col gap-3"
+          className="flex flex-col gap-3 content-space"
           defaultValue="0"
           type="single"
         >
@@ -104,12 +104,9 @@ export const PricingRoute = () => {
             <AccordionFaq key={index} a={v.a} index={index} q={v.q} />
           ))}
         </Accordion>
-        <div className="mt-10 text-center text-lg tracking-tight">
+        <div className="typo-lg mt-10 text-center tracking-tight">
           <p className="inline">Haven’t got your answer?</p>
-          <Link
-            className="ml-2 text-indigo-600 hover:text-indigo-500 active:text-indigo-400"
-            to="#"
-          >
+          <Link className="ml-2 text-primary hover:text-primary-500 active:text-primary-400" to="#">
             Contact our support now
           </Link>
         </div>

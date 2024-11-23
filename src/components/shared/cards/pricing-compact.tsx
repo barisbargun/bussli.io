@@ -2,6 +2,7 @@ import { ArrowRight, Check, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
+import { H1, H3, Small } from '@/components/ui/typography'
 import { cn } from '@/lib/utils'
 
 type Props = React.HTMLAttributes<HTMLLIElement> & {
@@ -31,22 +32,27 @@ export const CardPricingCompact = ({
 }: Props) => {
   return (
     <li
-      {...props}
       className={cn(
-        'flex flex-col gap-8 rounded-2xl border-[3px] border-indigo-600 px-10 py-7 max-lg:max-w-[30rem] max-lg:basis-full lg:flex-1 lg:gap-6 lg:rounded-xl xl:px-12 xl:py-9',
-        fillColor && 'bg-indigo-600 text-white',
+        'flex max-w-md flex-col gap-4 rounded-2xl border-[3px] border-primary px-7 py-6 max-lg:w-full lg:flex-1 lg:rounded-xl xl:gap-8 xl:px-12 xl:py-9',
+        fillColor && 'bg-primary text-white',
         className
       )}
+      {...props}
     >
-      <h3 className="text-sm font-bold uppercase tracking-widest">{type}</h3>
+      <Small className="text-sm font-bold uppercase tracking-widest">{type}</Small>
 
-      <div className="">
-        <span className="text-2xl font-bold">$</span>
-        <h3 className="-ml-0.5 inline text-7xl font-bold tracking-tighter lg:text-6xl">
+      <div>
+        <H3 as="span">$</H3>
+        <H1 as="h3" className="-ml-0.5 inline">
           {isMonthly ? cost : Math.round((cost * 12 * (100 - discount)) / 100)}
-        </h3>
-        <span className="font-lg ml-0.5">/&nbsp;{isMonthly ? 'month' : 'year'}</span>
-        <p className="mt-2 opacity-70 max-lg:text-xs xl:mt-1">
+        </H1>
+        <span className="ml-0.5">/&nbsp;{isMonthly ? 'month' : 'year'}</span>
+        <p
+          className={cn(
+            'mt-1 max-xl:text-sm',
+            fillColor ? 'text-muted-foreground-2' : 'text-muted-foreground'
+          )}
+        >
           billed {isMonthly ? 'monthly' : 'yearly'}
         </p>
       </div>
@@ -55,10 +61,7 @@ export const CardPricingCompact = ({
         {featureList.map((v, index) => (
           <li
             key={index}
-            className={
-              (cn(featureCount <= index && 'opacity-70'),
-              'flex items-center gap-4 [&>svg]:size-8 xl:[&>svg]:size-7')
-            }
+            className="flex items-center gap-2 xl:gap-4 [&>svg]:size-8 xl:[&>svg]:size-7"
           >
             {featureCount > index ? (
               <Check className="text-green-400" />
@@ -71,10 +74,10 @@ export const CardPricingCompact = ({
       </ul>
       <Link to={to}>
         <Button
-          variant="indigoTransparent"
+          variant="primaryTransparent"
           size="xl"
           className={cn(
-            'px-5 font-bold w-full',
+            'w-full px-5 font-bold',
             fillColor && 'bg-white/10 hover:bg-white/15 active:bg-white/20'
           )}
         >
@@ -83,7 +86,7 @@ export const CardPricingCompact = ({
         </Button>
       </Link>
 
-      <p className="-mt-2 tracking-tight opacity-70 max-lg:text-xs">
+      <p className="-mt-2 tracking-tight opacity-70 max-xl:text-sm">
         {isCreditCardRequire ? 'Credit' : 'No credit'} card required
       </p>
     </li>

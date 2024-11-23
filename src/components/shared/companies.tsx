@@ -1,25 +1,26 @@
 import { motion } from 'framer-motion'
 
 import { companiesConfig } from '@/config/companies'
-import useWindowSize from '@/hooks/use-window-size'
 import { motions } from '@/lib/motions'
 import { cn } from '@/lib/utils'
 
+import { Large, Small } from '../ui/typography'
+
 const CompanyLogos = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
-  const windowSize = useWindowSize()
+  const MotionSmall = motion.create(Small)
   return (
     <div
       {...props}
       className={cn(
-        'flex-center gap-3 max-lg:flex-col-reverse max-lg:gap-5 lg:flex-col',
+        'gap-3 flex-center max-lg:flex-col-reverse max-lg:gap-5 lg:flex-col',
         className
       )}
     >
-      <motion.p className="text-xs opacity-65" custom={2} variants={motions.fadeIn({})}>
+      <MotionSmall className="text-muted-foreground" custom={2} variants={motions.fadeIn({})}>
         Join 400+ companies already growing
-      </motion.p>
-      <div className="flex w-full justify-between gap-y-10 max-lg:flex-wrap sm:gap-x-1 lg:gap-0">
-        {companiesConfig.companies.slice(0, windowSize >= 3 ? 4 : 8).map((v, index) => (
+      </MotionSmall>
+      <div className="flex w-full justify-between gap-y-6 max-lg:flex-wrap sm:gap-x-6">
+        {companiesConfig.companies.slice(0, 4).map((v, index) => (
           <CompanyLogo key={v.title} index={index} {...v} />
         ))}
       </div>
@@ -30,7 +31,7 @@ const CompanyLogos = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
 const CompanyLogo = ({ icon, title, index }: { icon: string; title: string; index: number }) => {
   return (
     <motion.div
-      className="flex-center gap-1 md:gap-2"
+      className="gap-1 flex-center max-sm:min-w-[50%]"
       custom={index}
       variants={motions.fadeIn({
         direction: 'left',
@@ -41,12 +42,12 @@ const CompanyLogo = ({ icon, title, index }: { icon: string; title: string; inde
     >
       <img
         alt="company-logo"
-        className="size-[1.87rem] lg:size-9 xl:size-11"
+        className="size-6 sm:size-8 xl:size-11"
         src={icon}
         width={44}
         height={45}
       />
-      <p className="text-xl font-semibold lg:text-lg">{title}</p>
+      <Large className="max-xl:text-base max-lg:text-sm">{title}</Large>
     </motion.div>
   )
 }
