@@ -12,7 +12,7 @@ export const featuresConfig: FeaturesConfig[] = [
     title: 'Dedicated project manager',
     desc: 'Create your next landing page effortlessly with unique, code-free blocks.',
     icon: assets.svg.icons.colorfulIcons.personComputer,
-    iconColor: 'bg-indigo-600/10'
+    iconColor: 'bg-primary/10'
   },
   {
     title: 'Organized tasks',

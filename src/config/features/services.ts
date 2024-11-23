@@ -23,7 +23,7 @@ export const servicesConfig: ServicesConfig[] = [
     illustration: assets.svg.illustrations.designerLife
   },
   {
-    color: 'bg-indigo-600',
+    color: 'bg-primary',
     title: 'Web Development',
     desc: 'With lots of unique blocks, you can easily build a page without coding. Build your next landing page.',
     link: {
